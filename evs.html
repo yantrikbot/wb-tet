@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WB-TET — EVS Notes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #07071a; background-image: radial-gradient(ellipse at 15% 15%, rgba(52,211,153,0.15) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(16,185,129,0.1) 0%, transparent 55%); min-height: 100vh; color: #e2e8f0; padding: 40px 20px 60px; }
+    .breadcrumb { max-width: 1100px; margin: 0 auto 28px; font-size: 0.72rem; color: #666; }
+    .breadcrumb a { color: #34d399; text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+    .hero { max-width: 1100px; margin: 0 auto 46px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+    .hero-icon { width: 76px; height: 76px; background: linear-gradient(135deg,#34d399,#10b981); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 35px rgba(52,211,153,0.3); flex-shrink: 0; }
+    .hero-text .tag { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: #34d399; font-weight: 600; margin-bottom: 5px; }
+    .hero-text h1 { font-size: clamp(1.6rem,4vw,2.6rem); font-weight: 800; background: linear-gradient(90deg,#34d399,#a7f3d0,#fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-text p { font-size: 0.78rem; color: #888; margin-top: 6px; }
+
+    .section { max-width: 1100px; margin: 0 auto 52px; }
+    .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .sec-num { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg,#34d399,#10b981); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .sec-head h2 { font-size: 1.2rem; font-weight: 700; }
+    .sec-head .sub { font-size: 0.7rem; color: #888; margin-top: 2px; }
+    .imp { display: inline-block; font-size: 0.58rem; font-weight: 700; padding: 2px 7px; border-radius: 50px; margin-left: 6px; background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.35); color: #f87171; vertical-align: middle; letter-spacing: 1px; text-transform: uppercase; }
+
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; margin-bottom: 14px; }
+    .theme-card { border-radius: 18px; overflow: hidden; margin-bottom: 14px; }
+    .theme-card .th { padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+    .theme-card .th .icon { font-size: 1.4rem; width: 32px; text-align: center; flex-shrink: 0; }
+    .theme-card .th h3 { font-size: 0.92rem; font-weight: 700; }
+    .theme-card .th .sub2 { font-size: 0.68rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
+    .theme-card .bd { padding: 16px 20px; background: rgba(255,255,255,0.03); }
+
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+
+    ul { list-style: none; }
+    ul li { font-size: 0.75rem; color: #ccc; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '▸'; color: #34d399; flex-shrink: 0; margin-top: 1px; }
+    p { font-size: 0.78rem; color: #ccc; line-height: 1.75; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    th { background: rgba(255,255,255,0.06); padding: 9px 13px; text-align: left; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
+    td { padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+
+    .tip { background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.2); border-radius: 10px; padding: 12px 14px; font-size: 0.73rem; color: #86efac; display: flex; gap: 8px; margin-top: 12px; }
+    .tip span:first-child { flex-shrink: 0; }
+    .fact-box { background: rgba(255,210,0,0.07); border: 1px solid rgba(255,210,0,0.2); border-radius: 10px; padding: 12px 14px; font-size: 0.73rem; color: #fcd34d; display: flex; gap: 8px; margin-top: 10px; }
+    h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 10px; }
+    .div { max-width: 1100px; margin: 0 auto 46px; height: 1px; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.07),transparent); }
+    footer { text-align: center; font-size: 0.65rem; color: #444; letter-spacing: 1px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="paper1-index.html">Paper I Hub</a><span>›</span> Environmental Studies (EVS)
+</div>
+
+<div class="hero">
+  <div class="hero-icon">🌍</div>
+  <div class="hero-text">
+    <div class="tag">Paper I • 30 MCQ • 30 Marks</div>
+    <h1>Environmental Studies<br>(EVS)</h1>
+    <p>NCERT Class 3–5 based • 6 major themes • Pedagogy important</p>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">★</div><div><h2>EVS Syllabus Overview</h2></div></div>
+  <div class="card">
+    <table>
+      <thead><tr><th>Theme</th><th>Class</th><th>Key Topics</th><th>Weightage</th></tr></thead>
+      <tbody>
+        <tr><td>👨‍👩‍👧 Family & Friends</td><td>3, 4, 5</td><td>Relationships, Animals, Plants, Work & Play</td><td style="color:#fcd34d;">High</td></tr>
+        <tr><td>🍚 Food</td><td>3, 4, 5</td><td>Food sources, processing, nutrition</td><td style="color:#fcd34d;">High</td></tr>
+        <tr><td>🏠 Shelter</td><td>3, 4, 5</td><td>Types of houses, building materials</td><td style="color:#86efac;">Medium</td></tr>
+        <tr><td>💧 Water</td><td>3, 4, 5</td><td>Sources, conservation, water cycle</td><td style="color:#fcd34d;">High</td></tr>
+        <tr><td>🚂 Travel</td><td>3, 4, 5</td><td>Transport, maps, directions</td><td style="color:#86efac;">Medium</td></tr>
+        <tr><td>🔧 Things We Make & Do</td><td>3, 4, 5</td><td>Crafts, tools, occupations</td><td style="color:#86efac;">Medium</td></tr>
+      </tbody>
+    </table>
+    <div class="tip"><span>💡</span><span>NCERT Class 3 "Looking Around", Class 4 "Looking Around", Class 5 "Looking Around" — tin tei "Looking Around" — direct questions ase</span></div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- THEME 1: FAMILY & FRIENDS -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div><h2>Family & Friends <span class="imp">★★★</span></h2></div></div>
+
+  <div class="theme-card" style="border:1px solid rgba(52,211,153,0.2);">
+    <div class="th" style="background:linear-gradient(135deg,rgba(52,211,153,0.15),rgba(16,185,129,0.1));">
+      <div class="icon">👨‍👩‍👧</div>
+      <div><h3>Relationships</h3><div class="sub2">NCERT Class 3 Ch.1, 2</div></div>
+    </div>
+    <div class="bd">
+      <div class="grid2">
+        <ul>
+          <li>Nuclear family — baba, maa, chhele, meye</li>
+          <li>Joint family — daadu, dida, kaka, pishi sob</li>
+          <li>Community — lokjono mile somaj</li>
+          <li>Different cultures e different family structure</li>
+        </ul>
+        <ul>
+          <li>Grandparents er role — tradition o culture share</li>
+          <li>Siblings — brother, sister er relationship</li>
+          <li>Neighbourhood — padosir saathe mela</li>
+          <li>Diverse families — single parent, adopted</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="theme-card" style="border:1px solid rgba(96,165,250,0.2);">
+    <div class="th" style="background:rgba(96,165,250,0.08);">
+      <div class="icon">🐾</div>
+      <div><h3>Animals — Key Facts for Exam</h3><div class="sub2">NCERT Class 3, 4, 5</div></div>
+    </div>
+    <div class="bd">
+      <table>
+        <thead><tr><th>Topic</th><th>Important Facts</th></tr></thead>
+        <tbody>
+          <tr><td style="color:#60a5fa;">Animal Teeth</td><td>Squirrel o rabbit er daat badhtei thake — gnaw kore kami kore. Tiger er daat — prey dharta</td></tr>
+          <tr><td style="color:#60a5fa;">Migration</td><td>Siberia theke pakhi Inda te aashe winter e (Siberian Crane)</td></tr>
+          <tr><td style="color:#60a5fa;">Night Animals</td><td>Owl (Pechak), Bat (Badur) — raat e jagey</td></tr>
+          <tr><td style="color:#60a5fa;">Endangered</td><td>Tiger, Lion, Rhinoceros, Gharial</td></tr>
+          <tr><td style="color:#60a5fa;">Sanctuary (WB)</td><td>Sundarbans — Tiger Reserve, Jaldapara — Rhino</td></tr>
+          <tr><td style="color:#60a5fa;">Snake</td><td>Cobra — jahralo, Python — na jahralo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="theme-card" style="border:1px solid rgba(167,139,250,0.2);">
+    <div class="th" style="background:rgba(167,139,250,0.08);">
+      <div class="icon">🌱</div>
+      <div><h3>Plants — Seed to Fruit</h3></div>
+    </div>
+    <div class="bd">
+      <div class="grid2">
+        <ul>
+          <li>Root types: Taproot (Carrot, Radish) o Fibrous root (Rice, Wheat)</li>
+          <li>Leaves er kaj: Photosynthesis (sunlight + CO₂ + water → food + O₂)</li>
+          <li>Pollination: Bees, wind, butterflies diye hoy</li>
+          <li>Seed dispersal: Wind (Dandelion), Water (Coconut), Animals</li>
+        </ul>
+        <ul>
+          <li>Carnivorous plants: Pitcher Plant (insect khaay)</li>
+          <li>Insectivorous plants: Venus Flytrap</li>
+          <li>Climbing plants: Bean, Pumpkin, Bitter gourd</li>
+          <li>Parasitic: Cuscuta (Swarnalata) — other plant e jeeyon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- THEME 2: FOOD -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div><h2>Food <span class="imp">★★★</span></h2><div class="sub">NCERT Class 3–5 direct questions</div></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="color:#34d399;">Food Sources</h3>
+      <table>
+        <tbody>
+          <tr><td style="color:#86efac;">Plants theke</td><td>Fruits, Vegetables, Cereals, Pulses, Oil seeds</td></tr>
+          <tr><td style="color:#86efac;">Animals theke</td><td>Milk, Egg, Meat, Fish, Honey</td></tr>
+          <tr><td style="color:#86efac;">Fungi theke</td><td>Mushroom, Yeast (bread e use)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:#10b981;">Nutrients — Basic</h3>
+      <ul>
+        <li><b style="color:#86efac;">Carbohydrates</b> — energy dey (rice, wheat, sugar)</li>
+        <li><b style="color:#86efac;">Proteins</b> — growth o repair (dal, egg, meat, milk)</li>
+        <li><b style="color:#86efac;">Fats</b> — energy store (butter, oil, nuts)</li>
+        <li><b style="color:#86efac;">Vitamins</b> — disease protect (fruits, vegetables)</li>
+        <li><b style="color:#86efac;">Minerals</b> — bones o blood (iron, calcium)</li>
+        <li><b style="color:#86efac;">Water</b> — shob vital process e dorkar</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="color:#34d399;margin-bottom:14px;">Deficiency Diseases <span class="imp">★★★</span></h3>
+    <table>
+      <thead><tr><th>Nutrient</th><th>Disease</th><th>Symptoms</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#86efac;">Vitamin A</td><td>Night Blindness (Ratkoranta)</td><td>Raat e dekhte paina</td></tr>
+        <tr><td style="color:#86efac;">Vitamin B1</td><td>Beriberi</td><td>Nerve o heart problem</td></tr>
+        <tr><td style="color:#86efac;">Vitamin C</td><td>Scurvy</td><td>Gum theke blood, weakness</td></tr>
+        <tr><td style="color:#86efac;">Vitamin D</td><td>Rickets (Shishu)</td><td>Bone soft o weak</td></tr>
+        <tr><td style="color:#86efac;">Iron</td><td>Anaemia (Roktalpotataa)</td><td>Fatigue, pale skin</td></tr>
+        <tr><td style="color:#86efac;">Iodine</td><td>Goitre</td><td>Neck e swelling</td></tr>
+        <tr><td style="color:#86efac;">Calcium</td><td>Osteoporosis</td><td>Weak bones</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- THEME 3: WATER -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div><h2>Water <span class="imp">★★★</span></h2></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="color:#22d3ee;">Water Sources & Cycle</h3>
+      <ul>
+        <li>Natural sources: River, Lake, Pond, Sea, Rain</li>
+        <li>Underground: Well, Borehole, Spring</li>
+        <li>Water Cycle: Evaporation → Condensation → Precipitation</li>
+        <li>Earth surface: 71% water — mostly saline (97.5%)</li>
+        <li>Fresh water only 2.5% — mostly glaciers e stored</li>
+      </ul>
+      <div class="fact-box"><span>💡</span><span>1 person er per day minimum 50 litre water dorkar — WHO guideline</span></div>
+    </div>
+    <div class="card">
+      <h3 style="color:#34d399;">Water Conservation</h3>
+      <ul>
+        <li>Rainwater harvesting — cholapar jol dhorhe rakha</li>
+        <li>Drip irrigation — khete water save kora</li>
+        <li>Afforestation — gaach lagale beshi jol thake</li>
+        <li>Wastage rokha — leak fix kora</li>
+        <li>Jal Jeevan Mission — India Government scheme</li>
+      </ul>
+      <div class="tip"><span>💡</span><span>World Water Day — 22 March. World Environment Day — 5 June.</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="color:#22d3ee;margin-bottom:12px;">Water Pollution — Causes & Effects</h3>
+    <table>
+      <thead><tr><th>Cause</th><th>Effect</th><th>Solution</th></tr></thead>
+      <tbody>
+        <tr><td>Industrial waste</td><td>Toxic chemicals, fish death</td><td>Proper treatment plant</td></tr>
+        <tr><td>Agricultural chemicals</td><td>Eutrophication, algae bloom</td><td>Organic farming</td></tr>
+        <tr><td>Sewage</td><td>Cholera, Typhoid, Dysentery</td><td>Sewage treatment</td></tr>
+        <tr><td>Plastic waste</td><td>Marine life danger</td><td>Reduce plastic use</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- THEME 4: SHELTER -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">4</div><div><h2>Shelter & Travel <span class="imp">★★</span></h2></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="color:#f7971e;">Types of Houses</h3>
+      <table>
+        <tbody>
+          <tr><td style="color:#fbbf24;">Stilt House</td><td>Meghalaya, Assam — flood area — poles er upore</td></tr>
+          <tr><td style="color:#fbbf24;">Igloo</td><td>Arctic region — ice block diye bana</td></tr>
+          <tr><td style="color:#fbbf24;">Houseboat</td><td>Kashmir — Dal Lake e</td></tr>
+          <tr><td style="color:#fbbf24;">Tent</td><td>Desert / Nomadic people</td></tr>
+          <tr><td style="color:#fbbf24;">Pucca House</td><td>Cement, brick diye — permanent</td></tr>
+          <tr><td style="color:#fbbf24;">Kutcha House</td><td>Mud, bamboo, straw — temporary</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3 style="color:#a78bfa;">Transport — Ancient to Modern</h3>
+      <table>
+        <tbody>
+          <tr><td style="color:#c4b5fd;">Land</td><td>Bicycle, Car, Bus, Train, Bullock cart</td></tr>
+          <tr><td style="color:#c4b5fd;">Water</td><td>Boat, Ship, Ferry, Submarine</td></tr>
+          <tr><td style="color:#c4b5fd;">Air</td><td>Aeroplane, Helicopter, Hot air balloon</td></tr>
+          <tr><td style="color:#c4b5fd;">Fastest</td><td>Aeroplane (air)</td></tr>
+          <tr><td style="color:#c4b5fd;">Cheapest</td><td>Bicycle / Walking</td></tr>
+        </tbody>
+      </table>
+      <div class="tip"><span>💡</span><span>Maglev train — magnetic force diye chaloy, wheel nei — Japan e ache</span></div>
+    </div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- EVS PEDAGOGY -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">5</div><div><h2>EVS Pedagogy <span class="imp">★★★</span></h2><div class="sub">Exam e guaranteed 8–10 questions from pedagogy</div></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="color:#34d399;">EVS Nature & Scope</h3>
+      <ul>
+        <li>EVS = Social Science + Science er integrated subject</li>
+        <li>Class I–II te Environment Studies (separate subject noy)</li>
+        <li>Class III–V te EVS as separate subject</li>
+        <li>Holistic understanding of environment</li>
+        <li>Child er immediate environment theke shuru</li>
+        <li>NCERT "Looking Around" series — Class 3, 4, 5</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#10b981;">Teaching Methods</h3>
+      <ul>
+        <li><b style="color:#86efac;">Field Trip</b> — direct observation, real environment</li>
+        <li><b style="color:#86efac;">Project Method</b> — real problem solve kora</li>
+        <li><b style="color:#86efac;">Story Telling</b> — concept ke narrative e dhoranো</li>
+        <li><b style="color:#86efac;">Role Play</b> — shishu nijer role play kore shikhey</li>
+        <li><b style="color:#86efac;">Discussion</b> — open-ended questions e thought build</li>
+        <li><b style="color:#86efac;">Experimentation</b> — simple experiments diye concept</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#22d3ee;">Good EVS Questions — Characteristics</h3>
+      <ul>
+        <li>Open-ended howa — ek answer nei</li>
+        <li>Child er experience relate kora</li>
+        <li>Critical thinking develop kora</li>
+        <li>Curiosity o exploration encourage kora</li>
+        <li>Environment er direct observation involve kora</li>
+      </ul>
+      <div class="tip"><span>💡</span><span>EVS e rote memorization discourage kora hoy — understanding o application e focus</span></div>
+    </div>
+    <div class="card">
+      <h3 style="color:#f7971e;">Assessment in EVS</h3>
+      <ul>
+        <li>Portfolio — shishu er collected work</li>
+        <li>Observation — classroom behavior note kora</li>
+        <li>Oral questions — discussion e participation</li>
+        <li>Drawing & Activity — creative expression</li>
+        <li>Field visit report — real experience document</li>
+        <li>Group project — collaborative work</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="color:#34d399;margin-bottom:14px;">NCF 2005 — EVS er Guidelines</h3>
+    <table>
+      <thead><tr><th>Principle</th><th>EVS e Apply</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#86efac;">Constructivist approach</td><td>Shishu nij experience theke knowledge banay — teacher just facilitate kore</td></tr>
+        <tr><td style="color:#86efac;">Integrated learning</td><td>EVS e science, social science, language sob connected</td></tr>
+        <tr><td style="color:#86efac;">Child-centred</td><td>Shishu er interest o curiosity ke centre e rakha</td></tr>
+        <tr><td style="color:#86efac;">Activity-based</td><td>Hands-on activities — direct manipulation</td></tr>
+        <tr><td style="color:#86efac;">Local context</td><td>Child er surrounding environment theke shikhano</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- IMPORTANT DAYS -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">6</div><div><h2>Important Environment Days <span class="imp">★</span></h2></div></div>
+  <div class="grid3">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">🌍</div>
+      <div style="color:#fcd34d;font-weight:700;font-size:0.82rem;">April 22</div>
+      <div style="font-size:0.72rem;color:#aaa;">Earth Day</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">🌿</div>
+      <div style="color:#fcd34d;font-weight:700;font-size:0.82rem;">June 5</div>
+      <div style="font-size:0.72rem;color:#aaa;">World Environment Day</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">💧</div>
+      <div style="color:#fcd34d;font-weight:700;font-size:0.82rem;">March 22</div>
+      <div style="font-size:0.72rem;color:#aaa;">World Water Day</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">🐾</div>
+      <div style="color:#fcd34d;font-weight:700;font-size:0.82rem;">Oct 4</div>
+      <div style="font-size:0.72rem;color:#aaa;">World Animal Day</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">🌳</div>
+      <div style="color:#fcd34d;font-weight:700;font-size:0.82rem;">July 1–7</div>
+      <div style="font-size:0.72rem;color:#aaa;">Van Mahotsav Week</div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div style="font-size:1.5rem;margin-bottom:8px;">🐯</div>
+      <div style="color:#fcd34d;font-weight:700;font-size:0.82rem;">July 29</div>
+      <div style="font-size:0.72rem;color:#aaa;">World Tiger Day</div>
+    </div>
+  </div>
+</div>
+
+<footer>WB-TET Paper I — EVS Notes • 2026</footer>
+</body>
+</html>

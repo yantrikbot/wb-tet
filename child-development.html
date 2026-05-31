@@ -1,0 +1,1340 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WB-TET — Child Development & Pedagogy Notes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a1a;
+      --card: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.09);
+      --yellow: #ffd200;
+      --orange: #f7971e;
+      --purple: #a78bfa;
+      --blue: #60a5fa;
+      --green: #34d399;
+      --pink: #f472b6;
+      --cyan: #22d3ee;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(ellipse at 20% 20%, rgba(102,126,234,0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(247,151,30,0.1) 0%, transparent 50%);
+      min-height: 100vh;
+      color: #e2e8f0;
+      padding: 40px 20px 60px;
+    }
+
+    /* NAV BREADCRUMB */
+    .breadcrumb {
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      font-size: 0.72rem;
+      color: #666;
+    }
+    .breadcrumb a { color: var(--orange); text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto 50px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-icon {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem;
+      flex-shrink: 0;
+      box-shadow: 0 10px 40px rgba(102,126,234,0.4);
+    }
+    .hero-text .tag {
+      font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--purple); font-weight: 600; margin-bottom: 6px;
+    }
+    .hero-text h1 {
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #e2e8f0);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-text p { font-size: 0.8rem; color: #888; margin-top: 6px; }
+    .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .hero-pills span {
+      font-size: 0.68rem; padding: 5px 14px; border-radius: 50px;
+      background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.3);
+      color: var(--purple);
+    }
+
+    /* TOPIC NAV */
+    .topic-nav {
+      max-width: 1100px;
+      margin: 0 auto 50px;
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .topic-nav a {
+      font-size: 0.72rem; padding: 8px 16px; border-radius: 50px; text-decoration: none;
+      background: var(--card); border: 1px solid var(--border); color: #aaa;
+      transition: all 0.2s;
+    }
+    .topic-nav a:hover { background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.4); color: var(--purple); }
+
+    /* SECTION */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      scroll-margin-top: 20px;
+    }
+    .section-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 24px;
+    }
+    .section-num {
+      width: 38px; height: 38px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .section-header h2 { font-size: 1.3rem; font-weight: 700; }
+    .section-header .sub { font-size: 0.72rem; color: #888; margin-top: 2px; }
+
+    /* THEORY CARD */
+    .theory-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .theory-card .tc-head {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+    }
+    .tc-head .icon { font-size: 1.4rem; width: 36px; text-align: center; flex-shrink: 0; }
+    .tc-head-text { flex: 1; }
+    .tc-head-text h3 { font-size: 0.95rem; font-weight: 700; }
+    .tc-head-text p  { font-size: 0.7rem; color: #888; margin-top: 2px; }
+    .tc-tag {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; padding: 4px 10px;
+      border-radius: 50px; flex-shrink: 0;
+    }
+    .theory-card .tc-body { padding: 20px 22px; }
+
+    /* STAGE TABLE */
+    .stage-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+    .stage-table th {
+      background: rgba(255,255,255,0.07);
+      padding: 10px 14px; text-align: left;
+      font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa;
+    }
+    .stage-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    .stage-table tr:last-child td { border-bottom: none; }
+    .stage-table tr:hover td { background: rgba(255,255,255,0.03); }
+    .stage-badge {
+      display: inline-block; font-size: 0.62rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 50px; white-space: nowrap;
+    }
+
+    /* GRID 2 COL */
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+
+    /* KEY CONCEPT BOX */
+    .kbox {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px;
+    }
+    .kbox .kb-icon { font-size: 1.5rem; margin-bottom: 10px; }
+    .kbox h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 10px; }
+    .kbox ul { list-style: none; }
+    .kbox ul li {
+      font-size: 0.76rem; color: #ccc; padding: 5px 0;
+      display: flex; gap: 8px; align-items: flex-start;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .kbox ul li:last-child { border-bottom: none; }
+    .kbox ul li::before { content: '▸'; flex-shrink: 0; margin-top: 1px; }
+
+    /* HIGHLIGHT BOX */
+    .hbox {
+      border-radius: 14px; padding: 16px 18px; margin-top: 14px;
+      font-size: 0.78rem; line-height: 1.7;
+      border-left: 3px solid;
+    }
+
+    /* MEMORY TIP */
+    .mem-tip {
+      background: rgba(255,210,0,0.07); border: 1px solid rgba(255,210,0,0.2);
+      border-radius: 12px; padding: 14px 16px;
+      font-size: 0.75rem; color: #fcd34d; margin-top: 14px;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .mem-tip .tip-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+    /* COMPARISON TABLE */
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 0.76rem; }
+    .comp-table th {
+      padding: 10px 14px; text-align: left; font-size: 0.68rem;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .comp-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+    /* DIVIDER */
+    .div { max-width: 1100px; margin: 0 auto 50px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
+
+    /* IMPORTANT TAG */
+    .imp {
+      display: inline-block; font-size: 0.6rem; font-weight: 700;
+      padding: 2px 8px; border-radius: 50px; margin-left: 6px;
+      background: rgba(239,68,68,0.2); border: 1px solid rgba(239,68,68,0.4);
+      color: #f87171; vertical-align: middle; letter-spacing: 1px; text-transform: uppercase;
+    }
+
+    /* QUICK FACTS */
+    .qf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+    .qf-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px; text-align: center;
+    }
+    .qf-card .qf-num { font-size: 1.8rem; font-weight: 800; }
+    .qf-card .qf-lbl { font-size: 0.68rem; color: #888; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* FOOTER */
+    footer { text-align: center; font-size: 0.68rem; color: #444; letter-spacing: 1px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="breadcrumb">
+    <a href="syllabus.html">WB-TET Syllabus</a>
+    <span>›</span> Paper I
+    <span>›</span> Child Development & Pedagogy
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-icon">🧠</div>
+    <div class="hero-text">
+      <div class="tag">Paper I • 30 MCQ • 30 Marks</div>
+      <h1>Child Development<br>& Pedagogy</h1>
+      <p>WB-TET er sabcheye important section — ektu bhalokore porle 28-30 tulo easy</p>
+      <div class="hero-pills">
+        <span>🎯 30 Questions</span>
+        <span>📚 9 Major Topics</span>
+        <span>⏱ High Weightage</span>
+        <span>✅ No Negative Marking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC NAV -->
+  <div class="topic-nav">
+    <a href="#piaget">🌱 Piaget</a>
+    <a href="#vygotsky">🤝 Vygotsky</a>
+    <a href="#kohlberg">⚖️ Kohlberg</a>
+    <a href="#erikson">🔄 Erikson</a>
+    <a href="#learning">📖 Learning Theories</a>
+    <a href="#intelligence">🧩 Intelligence</a>
+    <a href="#inclusive">🌈 Inclusive Education</a>
+    <a href="#assessment">📊 Assessment</a>
+    <a href="#ncf">📋 NCF & RTE</a>
+    <a href="#growth">📈 Growth & Dev</a>
+    <a href="#heredity">🧬 Heredity & Env</a>
+    <a href="#personality">👤 Personality</a>
+    <a href="#motivation">⚡ Motivation</a>
+    <a href="#memory">💾 Memory</a>
+    <a href="#creativity">🎨 Creativity</a>
+    <a href="#constructivism">🏗️ Constructivism</a>
+    <a href="#child-centred">🎯 Child-Centred</a>
+    <a href="#teaching">📚 Teaching-Learning</a>
+    <a href="#remedial">🔧 Remedial Teaching</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       1. PIAGET
+  ════════════════════════════════════════════ -->
+  <div class="section" id="piaget">
+    <div class="section-header" style="--c1:#667eea;--c2:#764ba2;">
+      <div class="section-num" style="--c1:#667eea;--c2:#764ba2;">1</div>
+      <div>
+        <h2>Piaget er Cognitive Development Theory <span class="imp">★★★</span></h2>
+        <div class="sub">Jean Piaget (1896–1980) • Switzerland • Constructivist</div>
+      </div>
+    </div>
+
+    <div class="theory-card">
+      <div class="tc-head">
+        <div class="icon">🧩</div>
+        <div class="tc-head-text">
+          <h3>Core Idea</h3>
+          <p>Shishu nij experience theke knowledge taire kore — passive receiver noy</p>
+        </div>
+        <div class="tc-tag" style="background:rgba(102,126,234,0.2);border:1px solid rgba(102,126,234,0.4);color:#a78bfa;">Constructivism</div>
+      </div>
+      <div class="tc-body">
+        <p style="font-size:0.8rem;color:#ccc;margin-bottom:16px;">Piaget bolen — shishu 4 ta stage e develop kore, each stage te notun logical thinking develop hoy.</p>
+        <table class="stage-table">
+          <thead><tr>
+            <th>Stage</th><th>Age</th><th>Key Feature</th><th>Example</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="stage-badge" style="background:rgba(96,165,250,0.2);color:#60a5fa;border:1px solid rgba(96,165,250,0.3);">Sensorimotor</span></td>
+              <td style="color:#fcd34d;">0–2 yrs</td>
+              <td>Senses o motor action diye jante chaoy<br><small style="color:#888;">Object Permanence develop hoy</small></td>
+              <td style="color:#aaa;font-size:0.72rem;">Ball lukiye rakhle khuje berao</td>
+            </tr>
+            <tr>
+              <td><span class="stage-badge" style="background:rgba(167,139,250,0.2);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Pre-operational</span></td>
+              <td style="color:#fcd34d;">2–7 yrs</td>
+              <td>Language o symbols use kore<br><small style="color:#888;">Egocentrism, Animism, Centration</small></td>
+              <td style="color:#aaa;font-size:0.72rem;">Nij dr perspective e shob bujhe</td>
+            </tr>
+            <tr>
+              <td><span class="stage-badge" style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.3);">Concrete Operational</span></td>
+              <td style="color:#fcd34d;">7–11 yrs</td>
+              <td>Logical thinking (concrete objects e)<br><small style="color:#888;">Conservation, Reversibility, Seriation</small></td>
+              <td style="color:#aaa;font-size:0.72rem;">Paani gondone same thake bujhe</td>
+            </tr>
+            <tr>
+              <td><span class="stage-badge" style="background:rgba(244,114,182,0.2);color:#f472b6;border:1px solid rgba(244,114,182,0.3);">Formal Operational</span></td>
+              <td style="color:#fcd34d;">11+ yrs</td>
+              <td>Abstract reasoning, Hypothetical thinking<br><small style="color:#888;">Scientific o logical reasoning</small></td>
+              <td style="color:#aaa;font-size:0.72rem;">If-then reasoning, future planning</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hbox" style="background:rgba(102,126,234,0.08);border-color:#667eea;">
+          <strong style="color:#a78bfa;">Key Terms to Remember:</strong><br>
+          <span style="color:#ccc;">
+            <b style="color:#60a5fa;">Assimilation</b> — notun info purano schema te fit kora |
+            <b style="color:#60a5fa;">Accommodation</b> — schema change kore notun info newa |
+            <b style="color:#60a5fa;">Equilibration</b> — balance maintain kora |
+            <b style="color:#60a5fa;">Schema</b> — mental framework
+          </span>
+        </div>
+        <div class="mem-tip">
+          <span class="tip-icon">💡</span>
+          <span><strong>Memory Trick:</strong> <b>S P C F</b> — "Some People Can Fly" → Sensorimotor, Pre-operational, Concrete, Formal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       2. VYGOTSKY
+  ════════════════════════════════════════════ -->
+  <div class="section" id="vygotsky">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);">2</div>
+      <div>
+        <h2>Vygotsky er Social Learning Theory <span class="imp">★★★</span></h2>
+        <div class="sub">Lev Vygotsky (1896–1934) • Russia • Socio-cultural Theory</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="theory-card">
+        <div class="tc-head">
+          <div class="icon">📏</div>
+          <div class="tc-head-text">
+            <h3>Zone of Proximal Development (ZPD)</h3>
+            <p>Exam e sবচেয়ে বেশি আসে</p>
+          </div>
+          <div class="tc-tag" style="background:rgba(34,211,238,0.15);border:1px solid rgba(34,211,238,0.3);color:#22d3ee;">Core Concept</div>
+        </div>
+        <div class="tc-body">
+          <div style="font-size:0.78rem;color:#ccc;">
+            <p style="margin-bottom:12px;"><b style="color:#22d3ee;">ZPD = </b>ja shishu ekhon korte parche na, kintu help paile korte parbey</p>
+            <div style="display:flex;gap:8px;flex-direction:column;">
+              <div style="padding:10px 14px;background:rgba(34,211,238,0.08);border-radius:10px;border-left:3px solid #22d3ee;">
+                ✅ <b>Actual Development Level</b> — shishu nij e ki korte pare
+              </div>
+              <div style="padding:10px 14px;background:rgba(59,130,246,0.08);border-radius:10px;border-left:3px solid #3b82f6;">
+                🎯 <b>Potential Development Level</b> — guidance e ki korte parbe
+              </div>
+              <div style="padding:10px 14px;background:rgba(167,139,250,0.08);border-radius:10px;border-left:3px solid #a78bfa;">
+                🏗️ <b>ZPD</b> = ei dutor maaher gap
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theory-card">
+        <div class="tc-head">
+          <div class="icon">🏗️</div>
+          <div class="tc-head-text">
+            <h3>Scaffolding</h3>
+            <p>Teacher er role in learning</p>
+          </div>
+          <div class="tc-tag" style="background:rgba(34,211,238,0.15);border:1px solid rgba(34,211,238,0.3);color:#22d3ee;">Key Concept</div>
+        </div>
+        <div class="tc-body" style="font-size:0.78rem;color:#ccc;">
+          <p style="margin-bottom:12px;">Teacher temporary support dey — shishu shikhe gele support remove kore dey</p>
+          <ul style="list-style:none;">
+            <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Hints o clues deoa</li>
+            <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Example dekhano</li>
+            <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Gradually support komanো</li>
+            <li style="padding:6px 0;">▸ Shishu independent hole scaffolding hatano</li>
+          </ul>
+          <div class="mem-tip" style="margin-top:12px;">
+            <span class="tip-icon">💡</span>
+            <span>Building scaffold = temporary, remove kora hoy construction er pore — same idea</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="theory-card" style="margin-top:0;">
+      <div class="tc-head">
+        <div class="icon">🗣️</div>
+        <div class="tc-head-text">
+          <h3>Language & Thought</h3>
+          <p>Vygotsky bolen Language e thought develop hoy</p>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="grid2">
+          <div style="font-size:0.78rem;color:#ccc;">
+            <p style="margin-bottom:10px;color:#22d3ee;font-weight:600;">Private Speech (Inner Speech)</p>
+            <p>Shishu nijer sathe kotha bole — thought er part. Piaget eita egocentric bolthen, kintu Vygotsky bolen eta thinking tool.</p>
+          </div>
+          <div style="font-size:0.78rem;color:#ccc;">
+            <p style="margin-bottom:10px;color:#3b82f6;font-weight:600;">Piaget vs Vygotsky</p>
+            <p><b style="color:#a78bfa;">Piaget:</b> Development e Learning hoy (pore)<br><b style="color:#22d3ee;">Vygotsky:</b> Learning e Development hoy (aage)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       3. KOHLBERG
+  ════════════════════════════════════════════ -->
+  <div class="section" id="kohlberg">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#f7971e,#ffd200);">3</div>
+      <div>
+        <h2>Kohlberg er Moral Development <span class="imp">★★★</span></h2>
+        <div class="sub">Lawrence Kohlberg • 3 Levels, 6 Stages</div>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="tc-body">
+        <table class="stage-table">
+          <thead><tr>
+            <th>Level</th><th>Stage</th><th>Age</th><th>Key Feature</th>
+          </tr></thead>
+          <tbody>
+            <tr>
+              <td rowspan="2" style="color:#f472b6;font-weight:600;vertical-align:middle;">
+                Pre-conventional<br><small style="color:#888;font-weight:400;">Atyachar o pashar jonne</small>
+              </td>
+              <td><b>Stage 1:</b> Obedience & Punishment</td>
+              <td style="color:#fcd34d;">~4–7</td>
+              <td style="color:#aaa;font-size:0.72rem;">Rule mane shoddho punishment er bhoy e</td>
+            </tr>
+            <tr>
+              <td><b>Stage 2:</b> Self-Interest / Reward</td>
+              <td style="color:#fcd34d;">~7–10</td>
+              <td style="color:#aaa;font-size:0.72rem;">Nijer faidar jonne valo kaje</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="color:#34d399;font-weight:600;vertical-align:middle;">
+                Conventional<br><small style="color:#888;font-weight:400;">Most adults</small>
+              </td>
+              <td><b>Stage 3:</b> Good Boy/Girl</td>
+              <td style="color:#fcd34d;">~10–13</td>
+              <td style="color:#aaa;font-size:0.72rem;">Somajer approval er jonno</td>
+            </tr>
+            <tr>
+              <td><b>Stage 4:</b> Law & Order</td>
+              <td style="color:#fcd34d;">Teen+</td>
+              <td style="color:#aaa;font-size:0.72rem;">Niyom o somaj rokhar jonno</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="color:#60a5fa;font-weight:600;vertical-align:middle;">
+                Post-conventional<br><small style="color:#888;font-weight:400;">Few people reach</small>
+              </td>
+              <td><b>Stage 5:</b> Social Contract</td>
+              <td style="color:#fcd34d;">Adult</td>
+              <td style="color:#aaa;font-size:0.72rem;">Somajer valo er jonno niyom change hote pare</td>
+            </tr>
+            <tr>
+              <td><b>Stage 6:</b> Universal Ethics</td>
+              <td style="color:#fcd34d;">Very few</td>
+              <td style="color:#aaa;font-size:0.72rem;">Universal niyam — Gandhi, MLK er moto</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mem-tip">
+          <span class="tip-icon">💡</span>
+          <span><strong>Memory Trick:</strong> <b>P-C-PC</b> = Pre-conventional (punishment), Conventional (society), Post-conventional (universal ethics)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       4. ERIKSON
+  ════════════════════════════════════════════ -->
+  <div class="section" id="erikson">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#34d399,#10b981);">4</div>
+      <div>
+        <h2>Erikson er Psychosocial Development <span class="imp">★★</span></h2>
+        <div class="sub">Erik Erikson • 8 Stages — Birth to Death</div>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="tc-body">
+        <p style="font-size:0.78rem;color:#aaa;margin-bottom:14px;">WB-TET er jonno mainly Stage 1–4 important (school age poryonto)</p>
+        <table class="stage-table">
+          <thead><tr><th>Stage</th><th>Age</th><th>Crisis</th><th>Success hoile</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="color:#60a5fa;">Stage 1</td>
+              <td>0–1</td>
+              <td><b>Trust</b> vs Mistrust</td>
+              <td style="color:#34d399;font-size:0.72rem;">Hope — biswas korte pare</td>
+            </tr>
+            <tr>
+              <td style="color:#60a5fa;">Stage 2</td>
+              <td>1–3</td>
+              <td><b>Autonomy</b> vs Shame</td>
+              <td style="color:#34d399;font-size:0.72rem;">Will — swadhinata</td>
+            </tr>
+            <tr>
+              <td style="color:#60a5fa;">Stage 3</td>
+              <td>3–6</td>
+              <td><b>Initiative</b> vs Guilt</td>
+              <td style="color:#34d399;font-size:0.72rem;">Purpose — new kaj nite pare</td>
+            </tr>
+            <tr>
+              <td style="color:#f472b6;font-weight:600;">Stage 4 ★</td>
+              <td>6–12</td>
+              <td><b>Industry</b> vs Inferiority</td>
+              <td style="color:#34d399;font-size:0.72rem;">Competence — school age, TET relevant</td>
+            </tr>
+            <tr>
+              <td style="color:#a78bfa;">Stage 5</td>
+              <td>12–18</td>
+              <td><b>Identity</b> vs Role Confusion</td>
+              <td style="color:#34d399;font-size:0.72rem;">Fidelity — teen stage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       5. LEARNING THEORIES
+  ════════════════════════════════════════════ -->
+  <div class="section" id="learning">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#f472b6,#ec4899);">5</div>
+      <div>
+        <h2>Learning Theories <span class="imp">★★★</span></h2>
+        <div class="sub">Behaviorism, Constructivism, Gestalt, Bandura</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🐕</div>
+        <h4 style="color:#60a5fa;">Pavlov — Classical Conditioning</h4>
+        <ul>
+          <li>Dog experiment — bell bajie food deo</li>
+          <li>Stimulus → Response</li>
+          <li>UCS, UCR, CS, CR concept</li>
+          <li>Extinction, Generalization, Discrimination</li>
+        </ul>
+        <div class="mem-tip" style="margin-top:12px;">
+          <span class="tip-icon">💡</span><span>Bell = CS, Food = UCS, Laalar = UCR/CR</span>
+        </div>
+      </div>
+
+      <div class="kbox">
+        <div class="kb-icon">🐀</div>
+        <h4 style="color:#f472b6;">Skinner — Operant Conditioning</h4>
+        <ul>
+          <li>Reinforcement o Punishment concept</li>
+          <li>Positive Reinforcement — valo kaj e reward</li>
+          <li>Negative Reinforcement — khara kichu hatano</li>
+          <li>Schedules of Reinforcement (Fixed/Variable)</li>
+          <li>Shaping — step by step behavior change</li>
+        </ul>
+      </div>
+
+      <div class="kbox">
+        <div class="kb-icon">👁️</div>
+        <h4 style="color:#34d399;">Bandura — Social Learning (Observational)</h4>
+        <ul>
+          <li>Dekhle shikhey — Modeling</li>
+          <li>Attention → Retention → Reproduction → Motivation</li>
+          <li>Self-efficacy — nijer capability te biswas</li>
+          <li>Bobo Doll Experiment famous</li>
+        </ul>
+      </div>
+
+      <div class="kbox">
+        <div class="kb-icon">🔦</div>
+        <h4 style="color:#fcd34d;">Thorndike — Trial & Error</h4>
+        <ul>
+          <li>Laws of Learning — Readiness, Exercise, Effect</li>
+          <li>Cat in puzzle box experiment</li>
+          <li>Law of Effect — successful response strengthen hoy</li>
+          <li>S-R Bond theory</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       6. INTELLIGENCE
+  ════════════════════════════════════════════ -->
+  <div class="section" id="intelligence">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">6</div>
+      <div>
+        <h2>Intelligence Theories <span class="imp">★★</span></h2>
+        <div class="sub">Gardner, Spearman, Binet — IQ concept</div>
+      </div>
+    </div>
+
+    <div class="theory-card">
+      <div class="tc-head">
+        <div class="icon">🎭</div>
+        <div class="tc-head-text">
+          <h3>Gardner er Multiple Intelligence Theory</h3>
+          <p>8 tai alada alada intelligence thake</p>
+        </div>
+        <div class="tc-tag" style="background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);color:#a78bfa;">Most Asked</div>
+      </div>
+      <div class="tc-body">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+          <div style="background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">📖</div>
+            <b style="color:#60a5fa;">Linguistic</b><br><span style="color:#aaa;">Bhasha o writing skill</span>
+          </div>
+          <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">🔢</div>
+            <b style="color:#34d399;">Logical-Mathematical</b><br><span style="color:#aaa;">Number o logic</span>
+          </div>
+          <div style="background:rgba(244,114,182,0.08);border:1px solid rgba(244,114,182,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">🎵</div>
+            <b style="color:#f472b6;">Musical</b><br><span style="color:#aaa;">Sangeet o rhythm</span>
+          </div>
+          <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">⚽</div>
+            <b style="color:#fbbf24;">Bodily-Kinesthetic</b><br><span style="color:#aaa;">Body movement</span>
+          </div>
+          <div style="background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">🗺️</div>
+            <b style="color:#22d3ee;">Spatial</b><br><span style="color:#aaa;">Visual o space</span>
+          </div>
+          <div style="background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">🤝</div>
+            <b style="color:#a78bfa;">Interpersonal</b><br><span style="color:#aaa;">Onyer shathe mela</span>
+          </div>
+          <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">🪞</div>
+            <b style="color:#f87171;">Intrapersonal</b><br><span style="color:#aaa;">Nijer shathe bujhapora</span>
+          </div>
+          <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
+            <div style="font-size:1.2rem;margin-bottom:6px;">🌿</div>
+            <b style="color:#34d399;">Naturalist</b><br><span style="color:#aaa;">Prakriti o environment</span>
+          </div>
+        </div>
+        <div class="mem-tip">
+          <span class="tip-icon">💡</span>
+          <span><b>Memory Trick:</b> <b style="color:#fcd34d;">L L M B S I I N</b> — "Lovely Lady Makes Beautiful Spatial Images In Nature"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       7. INCLUSIVE EDUCATION
+  ════════════════════════════════════════════ -->
+  <div class="section" id="inclusive">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#f7971e,#ef4444);">7</div>
+      <div>
+        <h2>Inclusive Education <span class="imp">★★★</span></h2>
+        <div class="sub">Special Needs, Learning Disabilities, RTE</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">📚</div>
+        <h4 style="color:#f7971e;">Learning Disabilities</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Dyslexia</b> — porha likhate problem</li>
+          <li><b style="color:#fcd34d;">Dyscalculia</b> — math e problem</li>
+          <li><b style="color:#fcd34d;">Dysgraphia</b> — likhte problem</li>
+          <li><b style="color:#fcd34d;">ADHD</b> — attention o hyperactivity</li>
+          <li><b style="color:#fcd34d;">Autism Spectrum</b> — social interaction e problem</li>
+        </ul>
+      </div>
+
+      <div class="kbox">
+        <div class="kb-icon">🌈</div>
+        <h4 style="color:#34d399;">Inclusive Classroom</h4>
+        <ul>
+          <li>Shobar jonno ek classroom</li>
+          <li>Differentiated Instruction</li>
+          <li>Peer tutoring o cooperative learning</li>
+          <li>Adapted curriculum</li>
+          <li>IEP — Individual Education Plan</li>
+        </ul>
+      </div>
+
+      <div class="kbox">
+        <div class="kb-icon">⭐</div>
+        <h4 style="color:#a78bfa;">Gifted Children</h4>
+        <ul>
+          <li>High IQ (130+) ba exceptional talent</li>
+          <li>Enrichment programs dewa</li>
+          <li>Acceleration — class theke boro kore tola</li>
+          <li>Creativity o critical thinking focus</li>
+        </ul>
+      </div>
+
+      <div class="kbox">
+        <div class="kb-icon">🏛️</div>
+        <h4 style="color:#60a5fa;">RTE Act 2009</h4>
+        <ul>
+          <li>6–14 bochorer shobai free education paabe</li>
+          <li>No detention policy (Class 8 poryonto)</li>
+          <li>Private school e 25% seat reserved</li>
+          <li>Corporal punishment nishidho</li>
+          <li>Pupil-Teacher Ratio: 30:1 (Primary)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       8. ASSESSMENT
+  ════════════════════════════════════════════ -->
+  <div class="section" id="assessment">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#22d3ee,#06b6d4);">8</div>
+      <div>
+        <h2>Assessment & Evaluation <span class="imp">★★</span></h2>
+        <div class="sub">CCE, Formative, Summative, Portfolio</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">📝</div>
+        <h4 style="color:#22d3ee;">Types of Assessment</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Formative</b> — shikhanor sময় (ongoing feedback)</li>
+          <li><b style="color:#fcd34d;">Summative</b> — shikhanor pore (final exam)</li>
+          <li><b style="color:#fcd34d;">Diagnostic</b> — shuru te problem khuje ber kora</li>
+          <li><b style="color:#fcd34d;">Portfolio</b> — shishu er kaj collection</li>
+          <li><b style="color:#fcd34d;">Peer Assessment</b> — ek e onyer kaj mule</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🔄</div>
+        <h4 style="color:#34d399;">CCE — Continuous & Comprehensive Evaluation</h4>
+        <ul>
+          <li>Shudhu exam noy — shob kichhu dhore</li>
+          <li>Scholastic o Co-scholastic area</li>
+          <li>Class I–VIII te no failure policy</li>
+          <li>Grading system use hoy</li>
+          <li>Holistic development focus</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══════════════════════════════════════════
+       9. NCF & RTE
+  ════════════════════════════════════════════ -->
+  <div class="section" id="ncf">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#ffd200,#f7971e);">9</div>
+      <div>
+        <h2>NCF 2005 & Key Policies <span class="imp">★★</span></h2>
+        <div class="sub">National Curriculum Framework — NCERT</div>
+      </div>
+    </div>
+
+    <div class="theory-card">
+      <div class="tc-body">
+        <div class="grid2">
+          <div>
+            <p style="color:#ffd200;font-weight:700;font-size:0.85rem;margin-bottom:12px;">NCF 2005 er 5 Major Guidelines</p>
+            <ul style="list-style:none;font-size:0.76rem;color:#ccc;">
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Knowledge ke school er baire connect kora</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Syllabus er burden komaano</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Rote learning er baire jaoa</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Textbook monopoly komanো</li>
+              <li style="padding:7px 0;">▸ National identity + plural society</li>
+            </ul>
+          </div>
+          <div>
+            <p style="color:#f7971e;font-weight:700;font-size:0.85rem;margin-bottom:12px;">Important Quick Facts</p>
+            <ul style="list-style:none;font-size:0.76rem;color:#ccc;">
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ NCF 2005 = NCERT, based on Yashpal Committee</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ RTE 2009 = Article 21A te free education</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ CABE = Central Advisory Board of Education</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Mother tongue e shiksha — NCF guideline</li>
+              <li style="padding:7px 0;">▸ Activity-based learning important</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 10. GROWTH & DEVELOPMENT -->
+  <div class="section" id="growth">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#34d399,#059669);">10</div>
+      <div>
+        <h2>Bridho o Bikash — Growth &amp; Development <span class="imp">★★★</span></h2>
+        <div class="sub">Growth vs Development · Stages · Principles</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">📏</div>
+        <h4 style="color:#34d399;">Growth vs Development</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Growth</b> — quantitative change: height, weight (measurable)</li>
+          <li><b style="color:#fcd34d;">Development</b> — qualitative change: thinking, emotion, skill</li>
+          <li>Growth stops (adulthood), Development lifelong</li>
+          <li>Growth = part of development</li>
+        </ul>
+        <div class="mem-tip"><span class="tip-icon">💡</span><span><b>Trick:</b> Growth = ruler diye mapte paro · Development = mapte para jay na</span></div>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">📐</div>
+        <h4 style="color:#22d3ee;">Bikasher Niti — Principles</h4>
+        <ul>
+          <li>Continuous &amp; gradual process</li>
+          <li>Cephalocaudal — head to toe</li>
+          <li>Proximodistal — centre to periphery</li>
+          <li>Individual differences exist</li>
+          <li>Heredity + Environment duto miliye</li>
+          <li>Interrelated (physical, mental, social)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="theory-card" style="margin-top:16px;">
+      <div class="tc-body">
+        <p style="color:#a78bfa;font-weight:700;font-size:0.85rem;margin-bottom:14px;">Bikasher Bivinno Stor (Stages)</p>
+        <table class="stage-table">
+          <thead><tr><th>Stage</th><th>Age</th><th>Key Feature</th></tr></thead>
+          <tbody>
+            <tr><td style="color:#60a5fa;">Infancy</td><td>0–2 yrs</td><td>Rapid physical growth, motor development, sensory learning</td></tr>
+            <tr><td style="color:#60a5fa;">Early Childhood</td><td>2–6 yrs</td><td>Language, play, imagination, self-concept begins</td></tr>
+            <tr><td style="color:#f472b6;font-weight:600;">Late Childhood ★</td><td>6–12 yrs</td><td>School age — cognitive, social, moral development (TET focus)</td></tr>
+            <tr><td style="color:#34d399;">Adolescence</td><td>12–18 yrs</td><td>Puberty, identity, abstract thinking, peer influence</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 11. HEREDITY & ENVIRONMENT -->
+  <div class="section" id="heredity">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#a78bfa,#6d28d9);">11</div>
+      <div>
+        <h2>Heredity &amp; Environment <span class="imp">★★</span></h2>
+        <div class="sub">Nature vs Nurture — Bikashe provab</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🧬</div>
+        <h4 style="color:#a78bfa;">Heredity (Vorsho)</h4>
+        <ul>
+          <li>Parents theke genes-er madhome provab</li>
+          <li>IQ, personality, physical traits transmit hoy</li>
+          <li>Galton — first studied heredity and intelligence</li>
+          <li>Twin studies — identical twins same traits show kore</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🌍</div>
+        <h4 style="color:#22d3ee;">Environment (Poribesh)</h4>
+        <ul>
+          <li>Family, school, peers, culture — sob influence kore</li>
+          <li>Watson (Behaviourism) — environment determines behaviour</li>
+          <li>Enriched environment → better cognitive development</li>
+          <li>Socio-economic status has major impact</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hbox" style="background:rgba(167,139,250,0.08);border-color:#a78bfa;margin-top:12px;">
+      <b style="color:#a78bfa;">Current View:</b> <span style="color:#ccc;">Nature AND nurture — duto miliye bikash hoy. Neither alone is sufficient. Interaction of genes + environment = development.</span>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 12. PERSONALITY & INDIVIDUAL DIFFERENCES -->
+  <div class="section" id="personality">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#f472b6,#be185d);">12</div>
+      <div>
+        <h2>Personality &amp; Individual Differences <span class="imp">★★</span></h2>
+        <div class="sub">Vyaktitva · Byakti Bhedhata</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🎭</div>
+        <h4 style="color:#f472b6;">Personality Theories</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Freud</b> — Id, Ego, Superego · Psychoanalytic theory</li>
+          <li><b style="color:#fcd34d;">Allport</b> — Trait theory · Cardinal, Central, Secondary traits</li>
+          <li><b style="color:#fcd34d;">Big Five (OCEAN)</b> — Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism</li>
+          <li><b style="color:#fcd34d;">Type A/B</b> — competitive vs relaxed</li>
+        </ul>
+        <div class="mem-tip"><span class="tip-icon">💡</span><span><b>OCEAN</b> — Big Five trick</span></div>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🔀</div>
+        <h4 style="color:#22d3ee;">Individual Differences</h4>
+        <ul>
+          <li>Each child is unique — same age, different abilities</li>
+          <li>Causes: Heredity, environment, maturation, learning</li>
+          <li><b style="color:#fcd34d;">Types:</b> Physical, Mental, Emotional, Social, Educational</li>
+          <li>Teacher must accommodate differences</li>
+          <li>Differentiated Instruction — alag alag shikkhan poddhoti</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 13. MOTIVATION, ATTENTION & INTEREST -->
+  <div class="section" id="motivation">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#f7971e,#dc2626);">13</div>
+      <div>
+        <h2>Motivation, Attention &amp; Interest <span class="imp">★★★</span></h2>
+        <div class="sub">Prodipona · Dhyan · Agroho</div>
+      </div>
+    </div>
+    <div class="theory-card">
+      <div class="tc-head">
+        <div class="icon">🔺</div>
+        <div class="tc-head-text"><h3>Maslow er Hierarchy of Needs</h3><p>Most important motivation theory for TET</p></div>
+        <div class="tc-tag" style="background:rgba(247,151,30,0.2);border:1px solid rgba(247,151,30,0.4);color:#fbbf24;">Most Asked</div>
+      </div>
+      <div class="tc-body">
+        <div style="display:flex;flex-direction:column;gap:8px;max-width:500px;">
+          <div style="padding:10px;background:rgba(167,139,250,0.15);border-radius:8px;text-align:center;font-size:0.78rem;border:1px solid rgba(167,139,250,0.3);"><b style="color:#a78bfa;">5. Self-Actualization</b> — Highest need — potential realize kora</div>
+          <div style="padding:10px;background:rgba(96,165,250,0.12);border-radius:8px;text-align:center;font-size:0.78rem;border:1px solid rgba(96,165,250,0.25);"><b style="color:#60a5fa;">4. Esteem</b> — Recognition, achievement, respect</div>
+          <div style="padding:10px;background:rgba(52,211,153,0.12);border-radius:8px;text-align:center;font-size:0.78rem;border:1px solid rgba(52,211,153,0.25);"><b style="color:#34d399;">3. Love/Belonging</b> — Family, friendship, classroom community</div>
+          <div style="padding:10px;background:rgba(251,191,36,0.12);border-radius:8px;text-align:center;font-size:0.78rem;border:1px solid rgba(251,191,36,0.25);"><b style="color:#fbbf24;">2. Safety</b> — Secure classroom, no fear</div>
+          <div style="padding:10px;background:rgba(239,68,68,0.12);border-radius:8px;text-align:center;font-size:0.78rem;border:1px solid rgba(239,68,68,0.25);"><b style="color:#f87171;">1. Physiological</b> — Food, water, sleep — basic needs first</div>
+        </div>
+        <div class="hbox" style="background:rgba(247,151,30,0.08);border-color:#f7971e;margin-top:14px;">
+          <b style="color:#fbbf24;">Classroom implication:</b> <span style="color:#ccc;">Shishu r basic needs (1-2) purno na hole higher learning (4-5) possible noy</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:16px;">
+      <div class="kbox">
+        <div class="kb-icon">🎯</div>
+        <h4 style="color:#f7971e;">Types of Motivation</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Intrinsic</b> — nij theke iccha — curiosity, enjoyment</li>
+          <li><b style="color:#fcd34d;">Extrinsic</b> — bairer karone — reward, punishment, marks</li>
+          <li>Intrinsic motivation beshi effective for deep learning</li>
+          <li>Over-justification effect — reward dile intrinsic motivation kome</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🔍</div>
+        <h4 style="color:#22d3ee;">Attention &amp; Interest</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Attention</b> — selective focus on stimulus</li>
+          <li><b style="color:#fcd34d;">Interest</b> — sustained attention + positive feeling</li>
+          <li>Span of attention — children: short (15-20 min)</li>
+          <li>Factors: novelty, intensity, movement, personal relevance</li>
+          <li>Teacher role: variety in teaching method use kora</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 14. MEMORY & FORGETTING -->
+  <div class="section" id="memory">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#60a5fa,#1d4ed8);">14</div>
+      <div>
+        <h2>Memory &amp; Forgetting <span class="imp">★★</span></h2>
+        <div class="sub">Smriti o Bismoron — Ebbinghaus</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">💾</div>
+        <h4 style="color:#60a5fa;">Types of Memory</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Sensory Memory</b> — milliseconds, raw sensory input</li>
+          <li><b style="color:#fcd34d;">Short-Term (Working)</b> — 7±2 items, 20-30 seconds</li>
+          <li><b style="color:#fcd34d;">Long-Term</b> — unlimited, permanent store</li>
+          <li><b style="color:#fcd34d;">Episodic</b> — personal events memory</li>
+          <li><b style="color:#fcd34d;">Semantic</b> — general knowledge memory</li>
+          <li><b style="color:#fcd34d;">Procedural</b> — skills (cycle chalaano)</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">📉</div>
+        <h4 style="color:#f87171;">Forgetting — Ebbinghaus Curve</h4>
+        <ul>
+          <li>After 1 hour — 50% forgotten</li>
+          <li>After 1 day — 70% forgotten</li>
+          <li>After 1 week — 90% forgotten (without review)</li>
+          <li><b style="color:#fcd34d;">Spaced Repetition</b> — best way to retain</li>
+          <li>Causes: Decay, Interference, Motivated forgetting</li>
+          <li>Retrieval failure — info ache, access nai</li>
+        </ul>
+        <div class="mem-tip"><span class="tip-icon">💡</span><span>Review within 24 hours → retention doubles</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 15. CREATIVITY -->
+  <div class="section" id="creativity">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#ffd200,#f97316);">15</div>
+      <div>
+        <h2>Creativity — Srishtishilota <span class="imp">★★</span></h2>
+        <div class="sub">Torrance · Divergent Thinking · 4 P's</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🎨</div>
+        <h4 style="color:#ffd200;">Creativity er Components</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Fluency</b> — many ideas generate kora</li>
+          <li><b style="color:#fcd34d;">Flexibility</b> — different types of ideas</li>
+          <li><b style="color:#fcd34d;">Originality</b> — unique, novel ideas</li>
+          <li><b style="color:#fcd34d;">Elaboration</b> — idea ke detail e dekhano</li>
+          <li>Torrance Test of Creative Thinking (TTCT) — most used</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🧩</div>
+        <h4 style="color:#f97316;">Convergent vs Divergent Thinking</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Convergent</b> — ekta correct answer khoja (exam)</li>
+          <li><b style="color:#fcd34d;">Divergent</b> — onek possible answers (creativity)</li>
+          <li>Classroom e creative tasks dewa — brainstorming, open-ended questions</li>
+          <li>Creativity + Intelligence — related but different</li>
+        </ul>
+        <div class="mem-tip"><span class="tip-icon">💡</span><span><b>4 P's:</b> Person, Process, Product, Press (environment)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 16. CONSTRUCTIVISM -->
+  <div class="section" id="constructivism">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#667eea,#4f46e5);">16</div>
+      <div>
+        <h2>Constructivism — Rachonashilotabad <span class="imp">★★★</span></h2>
+        <div class="sub">Piaget + Vygotsky + Bruner — knowledge construction</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🏗️</div>
+        <h4 style="color:#a78bfa;">Core Idea</h4>
+        <ul>
+          <li>Shishu passive receiver noy — active knowledge builder</li>
+          <li>Prior knowledge + new experience = new understanding</li>
+          <li>Learning = meaning construction, not transmission</li>
+          <li><b style="color:#fcd34d;">Cognitive Constructivism</b> — Piaget (individual construction)</li>
+          <li><b style="color:#fcd34d;">Social Constructivism</b> — Vygotsky (social interaction e construction)</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🔎</div>
+        <h4 style="color:#60a5fa;">Bruner — Discovery Learning</h4>
+        <ul>
+          <li>Shishu nijei discover korbe — teacher guide korbe</li>
+          <li><b style="color:#fcd34d;">Spiral Curriculum</b> — same topic repeatedly, deeper level e</li>
+          <li>3 modes: Enactive (do), Iconic (image), Symbolic (language)</li>
+          <li>Intrinsic motivation important</li>
+          <li>Narrative thinking — story diye shekhaona</li>
+        </ul>
+        <div class="mem-tip"><span class="tip-icon">💡</span><span><b>EIS</b> — Enactive → Iconic → Symbolic (age e baro)</span></div>
+      </div>
+    </div>
+    <div class="hbox" style="background:rgba(102,126,234,0.08);border-color:#667eea;margin-top:12px;">
+      <b style="color:#a78bfa;">Classroom Application:</b> <span style="color:#ccc;">Project work, hands-on activities, group discussion, problem-based learning, inquiry-based teaching — all constructivist approaches</span>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 17. CHILD-CENTERED EDUCATION -->
+  <div class="section" id="child-centred">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#22d3ee,#0891b2);">17</div>
+      <div>
+        <h2>Child-Centred Education <span class="imp">★★★</span></h2>
+        <div class="sub">NCF 2005 er core principle — shishu kendre shikkha</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🎯</div>
+        <h4 style="color:#22d3ee;">Key Principles</h4>
+        <ul>
+          <li>Shishu r need, interest, ability center e</li>
+          <li>Learning by doing — activity based</li>
+          <li>Teacher = facilitator, not transmitter</li>
+          <li>Individual pace e learning</li>
+          <li>Joyful learning atmosphere</li>
+          <li>Democratic classroom — shishu r voice matters</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🌱</div>
+        <h4 style="color:#34d399;">Theorists</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Dewey</b> — "Learning by doing" · Democracy in education</li>
+          <li><b style="color:#fcd34d;">Montessori</b> — Prepared environment · Self-directed learning · Sensorial materials</li>
+          <li><b style="color:#fcd34d;">Froebel</b> — Kindergarten concept · Play-based learning</li>
+          <li><b style="color:#fcd34d;">Rousseau</b> — "Emile" — natural development</li>
+          <li>NCF 2005 — strongly recommends child-centred approach</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 18. TEACHING-LEARNING PROCESS -->
+  <div class="section" id="teaching">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#10b981,#065f46);">18</div>
+      <div>
+        <h2>Teaching-Learning Process &amp; Classroom Interaction <span class="imp">★★</span></h2>
+        <div class="sub">Shikkhan Prokriya · Classroom Dynamics</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">📚</div>
+        <h4 style="color:#10b981;">Phases of Teaching</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Pre-Active</b> — Planning: objectives, content, method, material</li>
+          <li><b style="color:#fcd34d;">Interactive</b> — Actual teaching: classroom activities</li>
+          <li><b style="color:#fcd34d;">Post-Active</b> — Evaluation: feedback, assessment, reflection</li>
+          <li>Bloom's Taxonomy — objectives theke assessment poryonto</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🤝</div>
+        <h4 style="color:#22d3ee;">Classroom Interaction Types</h4>
+        <ul>
+          <li><b style="color:#fcd34d;">Teacher-Student</b> — question-answer, explanation</li>
+          <li><b style="color:#fcd34d;">Student-Student</b> — peer learning, group work</li>
+          <li><b style="color:#fcd34d;">Student-Content</b> — reading, problem solving</li>
+          <li>Flanders Interaction Analysis — classroom talk measure kore</li>
+          <li>Democratic vs Autocratic classroom climate</li>
+          <li>Positive reinforcement er provab</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- 19. REMEDIAL TEACHING & ERROR ANALYSIS -->
+  <div class="section" id="remedial">
+    <div class="section-header">
+      <div class="section-num" style="background:linear-gradient(135deg,#f87171,#dc2626);">19</div>
+      <div>
+        <h2>Remedial Teaching &amp; Error Analysis <span class="imp">★★</span></h2>
+        <div class="sub">Protikar Shikkhon · Bhul Bishleshon</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="kbox">
+        <div class="kb-icon">🔧</div>
+        <h4 style="color:#f87171;">Remedial Teaching</h4>
+        <ul>
+          <li>Learning difficulties diagnose korar pore specific help</li>
+          <li>Individual attention — small group ba 1-on-1</li>
+          <li>Simplified materials, visual aids, concrete objects</li>
+          <li>Step-by-step approach, frequent revision</li>
+          <li>Positive reinforcement crucial</li>
+          <li>Parent-teacher coordination</li>
+        </ul>
+      </div>
+      <div class="kbox">
+        <div class="kb-icon">🔍</div>
+        <h4 style="color:#fbbf24;">Error Analysis</h4>
+        <ul>
+          <li>Shishu r bhul = learning opportunity, punishment noy</li>
+          <li><b style="color:#fcd34d;">Types of errors:</b> Conceptual, Procedural, Careless</li>
+          <li>Systematic errors — pattern identify kora</li>
+          <li>Diagnostic testing → error pattern find → targeted remediation</li>
+          <li>Constructive feedback — "keno vul?" bujhiye dao</li>
+        </ul>
+        <div class="mem-tip"><span class="tip-icon">💡</span><span>Error Analysis → Diagnose → Remediate → Reassess (cycle)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- QUICK REVISION STATS -->
+  <div style="max-width:1100px;margin:0 auto 50px;">
+    <div class="section-title" style="text-align:center;margin-bottom:24px;">
+      <h2 style="font-size:1.3rem;">⚡ Quick Revision Stats</h2>
+    </div>
+    <div class="qf-grid">
+      <div class="qf-card">
+        <div class="qf-num" style="background:linear-gradient(90deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">4</div>
+        <div class="qf-lbl">Piaget er Stage</div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-num" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">ZPD</div>
+        <div class="qf-lbl">Vygotsky er Theory</div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-num" style="background:linear-gradient(90deg,#f7971e,#ffd200);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">6</div>
+        <div class="qf-lbl">Kohlberg er Stage</div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-num" style="background:linear-gradient(90deg,#34d399,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">8</div>
+        <div class="qf-lbl">Erikson er Stage</div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-num" style="background:linear-gradient(90deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">8</div>
+        <div class="qf-lbl">Gardner er MI</div>
+      </div>
+      <div class="qf-card">
+        <div class="qf-num" style="background:linear-gradient(90deg,#f472b6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">6–14</div>
+        <div class="qf-lbl">RTE Age Range</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    WB-TET Paper I • Child Development & Pedagogy Notes • 2026
+  </footer>
+
+</body>
+</html>

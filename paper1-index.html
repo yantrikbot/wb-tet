@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WB-TET — Paper I Hub</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #07071a;
+      background-image:
+        radial-gradient(ellipse at 10% 10%, rgba(102,126,234,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 85%, rgba(247,151,30,0.12) 0%, transparent 55%);
+      min-height: 100vh; color: #e2e8f0; padding: 40px 20px 60px;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* HERO */
+    .hero { text-align: center; margin-bottom: 50px; }
+    .hero .tag { display: inline-block; background: linear-gradient(90deg,#667eea,#764ba2); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 6px 20px; border-radius: 50px; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; background: linear-gradient(90deg,#a78bfa,#60a5fa,#e2e8f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.15; }
+    .hero p { color: #888; font-size: 0.85rem; margin-top: 10px; }
+
+    /* STATS ROW */
+    .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-bottom: 60px; }
+    .stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 16px 24px; text-align: center; min-width: 120px; }
+    .stat .n { font-size: 1.8rem; font-weight: 800; background: linear-gradient(90deg,#f7971e,#ffd200); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat .l { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+
+    /* SUBJECT GRID */
+    .subj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 60px; }
+
+    .subj-card {
+      border-radius: 22px; overflow: hidden; position: relative;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .subj-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .subj-card .accent-bar { height: 4px; width: 100%; }
+    .subj-card .card-body { padding: 24px; }
+    .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .card-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .card-top-text h3 { font-size: 1rem; font-weight: 700; }
+    .card-top-text span { font-size: 0.7rem; color: #888; }
+
+    .topic-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .chip { font-size: 0.62rem; padding: 4px 10px; border-radius: 50px; font-weight: 600; }
+
+    .card-footer-row { display: flex; align-items: center; justify-content: space-between; }
+    .mcq-badge { font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 50px; }
+    .notes-btn {
+      font-size: 0.72rem; font-weight: 700; padding: 8px 18px; border-radius: 50px;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .notes-btn:hover { opacity: 0.8; }
+
+    /* EXAM TIPS */
+    .tips-section { max-width: 1100px; margin: 0 auto 60px; }
+    .tips-section h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; text-align: center; }
+    .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+    .tip-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 18px; }
+    .tip-card .tip-icon { font-size: 1.4rem; margin-bottom: 10px; }
+    .tip-card h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 8px; }
+    .tip-card p { font-size: 0.73rem; color: #aaa; line-height: 1.7; }
+
+    /* STRATEGY TABLE */
+    .strategy { max-width: 800px; margin: 0 auto 60px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; }
+    .strategy h2 { font-size: 1.1rem; font-weight: 700; padding: 20px 24px 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: rgba(255,255,255,0.05); padding: 10px 16px; text-align: left; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
+    td { padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.76rem; vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+
+    footer { text-align: center; font-size: 0.65rem; color: #444; letter-spacing: 1px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="tag">WB-TET Complete Guide</div>
+    <h1>Paper I — Primary<br>Complete Notes Hub</h1>
+    <p>Class I–V Teacher Eligibility • Shobo subject er detailed notes ekhanei</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">5</div><div class="l">Subjects</div></div>
+    <div class="stat"><div class="n">150</div><div class="l">MCQ</div></div>
+    <div class="stat"><div class="n">150</div><div class="l">Marks</div></div>
+    <div class="stat"><div class="n">2.5</div><div class="l">Hours</div></div>
+    <div class="stat"><div class="n">90</div><div class="l">Pass Marks</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">Negative Marking</div></div>
+  </div>
+
+  <!-- SUBJECT CARDS -->
+  <div class="subj-grid">
+
+    <!-- 1. CDP -->
+    <div class="subj-card">
+      <div class="accent-bar" style="background:linear-gradient(90deg,#667eea,#764ba2);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-icon" style="background:linear-gradient(135deg,#667eea,#764ba2);">🧠</div>
+          <div class="card-top-text">
+            <h3>Child Development & Pedagogy</h3>
+            <span>30 MCQ • Highest Weightage</span>
+          </div>
+        </div>
+        <div class="topic-chips">
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">Piaget</span>
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">Vygotsky</span>
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">Kohlberg</span>
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">Erikson</span>
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">Inclusive Ed.</span>
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">Assessment</span>
+          <span class="chip" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">NCF 2005</span>
+        </div>
+        <div class="card-footer-row">
+          <span class="mcq-badge" style="background:rgba(102,126,234,0.15);color:#a78bfa;border:1px solid rgba(102,126,234,0.3);">30 MCQ</span>
+          <a href="child-development.html" class="notes-btn" style="background:linear-gradient(90deg,#667eea,#764ba2);color:#fff;">📖 Notes Dekho →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Language I -->
+    <div class="subj-card">
+      <div class="accent-bar" style="background:linear-gradient(90deg,#f472b6,#ec4899);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-icon" style="background:linear-gradient(135deg,#f472b6,#ec4899);">🗣️</div>
+          <div class="card-top-text">
+            <h3>Language I — Bengali</h3>
+            <span>30 MCQ • Grammar + Pedagogy</span>
+          </div>
+        </div>
+        <div class="topic-chips">
+          <span class="chip" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">Comprehension</span>
+          <span class="chip" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">Sandhi-Samas</span>
+          <span class="chip" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">Karak</span>
+          <span class="chip" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">Vibhakti</span>
+          <span class="chip" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">Language Pedagogy</span>
+          <span class="chip" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">Krashen</span>
+        </div>
+        <div class="card-footer-row">
+          <span class="mcq-badge" style="background:rgba(244,114,182,0.12);color:#f472b6;border:1px solid rgba(244,114,182,0.25);">30 MCQ</span>
+          <a href="language1-bengali.html" class="notes-btn" style="background:linear-gradient(90deg,#f472b6,#ec4899);color:#fff;">📖 Notes Dekho →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Language II -->
+    <div class="subj-card">
+      <div class="accent-bar" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-icon" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);">🔤</div>
+          <div class="card-top-text">
+            <h3>Language II — English</h3>
+            <span>30 MCQ • Grammar + Pedagogy</span>
+          </div>
+        </div>
+        <div class="topic-chips">
+          <span class="chip" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">Comprehension</span>
+          <span class="chip" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">Tenses</span>
+          <span class="chip" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">Voice & Narration</span>
+          <span class="chip" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">Articles</span>
+          <span class="chip" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">ELT Methods</span>
+          <span class="chip" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">Chomsky</span>
+        </div>
+        <div class="card-footer-row">
+          <span class="mcq-badge" style="background:rgba(34,211,238,0.1);color:#22d3ee;border:1px solid rgba(34,211,238,0.25);">30 MCQ</span>
+          <a href="language2-english.html" class="notes-btn" style="background:linear-gradient(90deg,#22d3ee,#3b82f6);color:#fff;">📖 Notes Dekho →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MATHEMATICS -->
+    <div class="subj-card">
+      <div class="accent-bar" style="background:linear-gradient(90deg,#f7971e,#ffd200);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200);">🔢</div>
+          <div class="card-top-text">
+            <h3>Mathematics</h3>
+            <span>30 MCQ • Concept + Pedagogy</span>
+          </div>
+        </div>
+        <div class="topic-chips">
+          <span class="chip" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">Number System</span>
+          <span class="chip" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">Fractions</span>
+          <span class="chip" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">Geometry</span>
+          <span class="chip" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">Measurement</span>
+          <span class="chip" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">Data Handling</span>
+          <span class="chip" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">Math Pedagogy</span>
+        </div>
+        <div class="card-footer-row">
+          <span class="mcq-badge" style="background:rgba(247,151,30,0.12);color:#fbbf24;border:1px solid rgba(247,151,30,0.25);">30 MCQ</span>
+          <a href="mathematics.html" class="notes-btn" style="background:linear-gradient(90deg,#f7971e,#ffd200);color:#1a1a2e;">📖 Notes Dekho →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. EVS -->
+    <div class="subj-card">
+      <div class="accent-bar" style="background:linear-gradient(90deg,#34d399,#10b981);"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-icon" style="background:linear-gradient(135deg,#34d399,#10b981);">🌍</div>
+          <div class="card-top-text">
+            <h3>Environmental Studies (EVS)</h3>
+            <span>30 MCQ • Themes + Pedagogy</span>
+          </div>
+        </div>
+        <div class="topic-chips">
+          <span class="chip" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">Family & Food</span>
+          <span class="chip" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">Water & Shelter</span>
+          <span class="chip" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">Plants & Animals</span>
+          <span class="chip" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">Travel</span>
+          <span class="chip" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">EVS Pedagogy</span>
+          <span class="chip" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">NCERT Class 3–5</span>
+        </div>
+        <div class="card-footer-row">
+          <span class="mcq-badge" style="background:rgba(52,211,153,0.1);color:#34d399;border:1px solid rgba(52,211,153,0.25);">30 MCQ</span>
+          <a href="evs.html" class="notes-btn" style="background:linear-gradient(90deg,#34d399,#10b981);color:#fff;">📖 Notes Dekho →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ATTEMPT STRATEGY -->
+  <div class="strategy">
+    <h2>⚡ Exam Day Strategy — Kotay kotay time debo</h2>
+    <table>
+      <thead><tr><th>Subject</th><th>Questions</th><th>Ideal Time</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>🧠 Child Development & Pedagogy</td><td>30</td>
+          <td style="color:#fcd34d;">20 min</td>
+          <td><span style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.3);font-size:0.62rem;padding:3px 8px;border-radius:50px;font-weight:700;">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>🗣️ Language I — Bengali</td><td>30</td>
+          <td style="color:#fcd34d;">25 min</td>
+          <td><span style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.3);font-size:0.62rem;padding:3px 8px;border-radius:50px;font-weight:700;">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>🔤 Language II — English</td><td>30</td>
+          <td style="color:#fcd34d;">25 min</td>
+          <td><span style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);font-size:0.62rem;padding:3px 8px;border-radius:50px;font-weight:700;">MED</span></td>
+        </tr>
+        <tr>
+          <td>🔢 Mathematics</td><td>30</td>
+          <td style="color:#fcd34d;">30 min</td>
+          <td><span style="background:rgba(251,191,36,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);font-size:0.62rem;padding:3px 8px;border-radius:50px;font-weight:700;">MED</span></td>
+        </tr>
+        <tr>
+          <td>🌍 EVS</td><td>30</td>
+          <td style="color:#fcd34d;">20 min</td>
+          <td><span style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.3);font-size:0.62rem;padding:3px 8px;border-radius:50px;font-weight:700;">EASY</span></td>
+        </tr>
+        <tr style="background:rgba(255,210,0,0.04);">
+          <td style="color:#ffd200;font-weight:700;">Total</td>
+          <td style="color:#ffd200;font-weight:700;">150</td>
+          <td style="color:#ffd200;font-weight:700;">120 min</td>
+          <td style="color:#aaa;font-size:0.72rem;">30 min buffer thakbe</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EXAM TIPS -->
+  <div class="tips-section">
+    <h2>🎯 Top Exam Tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🧠</div>
+        <h4 style="color:#a78bfa;">CDP te aro beshi focus koro</h4>
+        <p>Piaget, Vygotsky, Kohlberg theory gulo theke ek question sure ashe. Theory er names o theorists gulo mone rakho.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📖</div>
+        <h4 style="color:#f472b6;">Comprehension skip koro na</h4>
+        <p>Language I & II te passage theke sure marks. Passage ta age poro, tarpor question — aro fast hoy.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔢</div>
+        <h4 style="color:#fbbf24;">Math e concept bujhe nao</h4>
+        <p>Rote noy, concept bujhle ek question theke onek variation solve kora jay. LCM, HCF, fraction practice koro.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🌿</div>
+        <h4 style="color:#34d399;">EVS e NCERT follow koro</h4>
+        <p>NCERT Class 3, 4, 5 er EVS theke direct questions ashe. Themes-based study koro — Food, Water, Travel.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">⏭️</div>
+        <h4 style="color:#60a5fa;">Stuck hole skip koro</h4>
+        <p>Ek question e 2 minuter beshi noy. Mark kore porer question e jao — sheshe time thakle phiro esho.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">✅</div>
+        <h4 style="color:#22d3ee;">Kono question na chere esho</h4>
+        <p>Negative marking nei! Sob question e answer koro — guess o korle 25% chance ache thike jawar.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>WB-TET Paper I — Complete Notes Hub • 2026</footer>
+
+</body>
+</html>

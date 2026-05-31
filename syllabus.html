@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WB-TET Syllabus Infographic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0c29;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    /* ── HERO HEADER ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #f7971e, #ffd200);
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #f7971e, #ffd200, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: #aaa;
+      letter-spacing: 1px;
+    }
+
+    /* ── STAT CHIPS ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+    .stat-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 18px 28px;
+      text-align: center;
+      min-width: 140px;
+    }
+    .stat-chip .num {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #f7971e, #ffd200);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-chip .lbl {
+      font-size: 0.72rem;
+      color: #ccc;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section-title h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .section-title .pill {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+
+    /* ── PAPER CARDS GRID ── */
+    .papers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto 70px;
+    }
+
+    .paper-card {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    .paper-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 2px;
+      background: var(--grad);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .paper-card .card-inner {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      padding: 28px;
+      height: 100%;
+    }
+
+    .paper-card.p1 { --grad: linear-gradient(135deg, #667eea, #764ba2); }
+    .paper-card.p2 { --grad: linear-gradient(135deg, #f7971e, #ffd200); }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .p1 .card-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .p2 .card-icon { background: linear-gradient(135deg, #f7971e, #ffd200); }
+
+    .card-header-text h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .card-header-text span {
+      font-size: 0.75rem;
+      color: #bbb;
+    }
+
+    /* ── SUBJECT ROWS ── */
+    .subject-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .subject-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 12px 14px;
+      transition: background 0.2s;
+    }
+    .subject-row:hover { background: rgba(255,255,255,0.09); }
+
+    .subj-emoji { font-size: 1.2rem; width: 28px; text-align: center; flex-shrink: 0; }
+
+    .subj-info { flex: 1; }
+    .subj-info .subj-name { font-size: 0.85rem; font-weight: 600; }
+    .subj-info .subj-sub  { font-size: 0.68rem; color: #aaa; margin-top: 2px; }
+
+    .subj-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .p1 .subj-badge { background: rgba(102,126,234,0.25); color: #a78bfa; border: 1px solid rgba(102,126,234,0.4); }
+    .p2 .subj-badge { background: rgba(247,151,30,0.2); color: #fbbf24; border: 1px solid rgba(247,151,30,0.35); }
+
+    /* progress bar */
+    .progress-wrap { width: 60px; flex-shrink: 0; }
+    .progress-bar { height: 5px; border-radius: 50px; background: rgba(255,255,255,0.1); overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 50px; }
+    .p1 .progress-fill { background: linear-gradient(90deg, #667eea, #764ba2); }
+    .p2 .progress-fill { background: linear-gradient(90deg, #f7971e, #ffd200); }
+    .progress-pct { font-size: 0.6rem; color: #888; margin-top: 3px; text-align: right; }
+
+    /* card footer */
+    .card-footer {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+    .card-footer strong { color: #fff; }
+
+    /* ── TOPICS SECTION ── */
+    .topics-section {
+      max-width: 1100px;
+      margin: 0 auto 70px;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .topic-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 22px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .topic-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); }
+
+    .topic-icon { font-size: 2rem; margin-bottom: 12px; }
+    .topic-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 10px; }
+    .topic-card ul { list-style: none; }
+    .topic-card ul li {
+      font-size: 0.75rem;
+      color: #ccc;
+      padding: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .topic-card ul li::before {
+      content: '▸';
+      color: #f7971e;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── PASSING CRITERIA ── */
+    .pass-section {
+      max-width: 700px;
+      margin: 0 auto 70px;
+      text-align: center;
+    }
+    .pass-bar-wrap {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 32px;
+      margin-top: 24px;
+    }
+    .pass-bar-wrap p { font-size: 0.8rem; color: #bbb; margin-bottom: 14px; }
+    .big-bar { height: 20px; background: rgba(255,255,255,0.1); border-radius: 50px; overflow: hidden; }
+    .big-fill {
+      height: 100%;
+      width: 60%;
+      background: linear-gradient(90deg, #f7971e, #ffd200);
+      border-radius: 50px;
+      position: relative;
+    }
+    .big-fill::after {
+      content: '60%';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .pass-note {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .pass-note div { font-size: 0.8rem; color: #ccc; }
+    .pass-note div strong { color: #ffd200; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.72rem;
+      color: #555;
+      letter-spacing: 1px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 1100px;
+      margin: 0 auto 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">West Bengal Teacher Eligibility Test</div>
+    <h1>WB-TET Syllabus</h1>
+    <p>Complete Exam Blueprint • Paper I & Paper II</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-chip"><div class="num">150</div><div class="lbl">Total MCQ</div></div>
+    <div class="stat-chip"><div class="num">150</div><div class="lbl">Total Marks</div></div>
+    <div class="stat-chip"><div class="num">2.5</div><div class="lbl">Hours</div></div>
+    <div class="stat-chip"><div class="num">90</div><div class="lbl">Pass Marks</div></div>
+    <div class="stat-chip"><div class="num">0</div><div class="lbl">Negative Marking</div></div>
+  </div>
+
+  <!-- PAPER CARDS -->
+  <div class="section-title">
+    <h2>
+      <span class="pill" style="background:linear-gradient(90deg,#667eea,#764ba2);color:#fff;">Paper I</span>
+      &
+      <span class="pill" style="background:linear-gradient(90deg,#f7971e,#ffd200);color:#1a1a2e;">Paper II</span>
+      Breakdown
+    </h2>
+  </div>
+
+  <div class="papers-grid">
+
+    <!-- PAPER I -->
+    <div class="paper-card p1">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-icon">📚</div>
+          <div class="card-header-text">
+            <h3>Paper I — Primary</h3>
+            <span>Class I to V • Age 6–11</span>
+          </div>
+        </div>
+        <div class="subject-list">
+          <div class="subject-row">
+            <div class="subj-emoji">🧠</div>
+            <div class="subj-info">
+              <div class="subj-name">Child Development & Pedagogy</div>
+              <div class="subj-sub">Shishu Bikash, Learning Theories</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row">
+            <div class="subj-emoji">🗣️</div>
+            <div class="subj-info">
+              <div class="subj-name">Language I (Bengali / Hindi)</div>
+              <div class="subj-sub">Grammar, Comprehension, Pedagogy</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row">
+            <div class="subj-emoji">🔤</div>
+            <div class="subj-info">
+              <div class="subj-name">Language II (English)</div>
+              <div class="subj-sub">Comprehension, Grammar, Pedagogy</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row">
+            <div class="subj-emoji">🔢</div>
+            <div class="subj-info">
+              <div class="subj-name">Mathematics</div>
+              <div class="subj-sub">Number System, Geometry, Mensuration</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row">
+            <div class="subj-emoji">🌍</div>
+            <div class="subj-info">
+              <div class="subj-name">Environmental Studies (EVS)</div>
+              <div class="subj-sub">Family, Food, Water, Travel, Nature</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>Total: <strong>150 MCQ</strong></span>
+          <span>Pass: <strong>90 Marks</strong></span>
+          <span>Time: <strong>2.5 hrs</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAPER II -->
+    <div class="paper-card p2">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-icon">🎓</div>
+          <div class="card-header-text">
+            <h3>Paper II — Upper Primary</h3>
+            <span>Class VI to VIII • Age 11–14</span>
+          </div>
+        </div>
+        <div class="subject-list">
+          <div class="subject-row">
+            <div class="subj-emoji">🧠</div>
+            <div class="subj-info">
+              <div class="subj-name">Child Development & Pedagogy</div>
+              <div class="subj-sub">Same as Paper I — common topics</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row">
+            <div class="subj-emoji">🗣️</div>
+            <div class="subj-info">
+              <div class="subj-name">Language I (Bengali / Hindi)</div>
+              <div class="subj-sub">Advanced Grammar, Pedagogy</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row">
+            <div class="subj-emoji">🔤</div>
+            <div class="subj-info">
+              <div class="subj-name">Language II (English)</div>
+              <div class="subj-sub">Advanced Comprehension, Grammar</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+              <div class="progress-pct">20%</div>
+            </div>
+            <div class="subj-badge">30 MCQ</div>
+          </div>
+          <div class="subject-row" style="border: 1px solid rgba(247,151,30,0.3);">
+            <div class="subj-emoji">🎯</div>
+            <div class="subj-info">
+              <div class="subj-name">Subject Specific (Choose 1)</div>
+              <div class="subj-sub" style="color:#fbbf24;">Math+Science / Social Science / Language</div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+              <div class="progress-pct">40%</div>
+            </div>
+            <div class="subj-badge">60 MCQ</div>
+          </div>
+        </div>
+        <div style="margin-top:14px; background:rgba(247,151,30,0.08); border:1px solid rgba(247,151,30,0.2); border-radius:12px; padding:14px;">
+          <p style="font-size:0.72rem; color:#fbbf24; font-weight:600; margin-bottom:8px;">📌 Subject Specific Options:</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="font-size:0.68rem; background:rgba(247,151,30,0.15); border:1px solid rgba(247,151,30,0.3); border-radius:50px; padding:4px 12px; color:#fcd34d;">🔢 Math & Science</span>
+            <span style="font-size:0.68rem; background:rgba(247,151,30,0.15); border:1px solid rgba(247,151,30,0.3); border-radius:50px; padding:4px 12px; color:#fcd34d;">🌐 Social Science</span>
+            <span style="font-size:0.68rem; background:rgba(247,151,30,0.15); border:1px solid rgba(247,151,30,0.3); border-radius:50px; padding:4px 12px; color:#fcd34d;">📖 Language</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>Total: <strong>150 MCQ</strong></span>
+          <span>Pass: <strong>90 Marks</strong></span>
+          <span>Time: <strong>2.5 hrs</strong></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CHILD DEVELOPMENT TOPICS -->
+  <div class="topics-section">
+    <div class="section-title" style="margin-bottom:30px;">
+      <h2>🧠 Child Development & Pedagogy — Key Topics</h2>
+      <p style="font-size:0.8rem;color:#aaa;margin-top:8px;">Dono Paper e same syllabus — sabcheye important section</p>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <div class="topic-icon">🌱</div>
+        <h4>Child Development</h4>
+        <ul>
+          <li>Piaget er Cognitive Development</li>
+          <li>Vygotsky er Social Learning</li>
+          <li>Kohlberg er Moral Development</li>
+          <li>Erikson er Psychosocial Stages</li>
+          <li>Heredity o Environment</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">📖</div>
+        <h4>Learning & Pedagogy</h4>
+        <ul>
+          <li>Behaviorism — Pavlov, Skinner</li>
+          <li>Constructivism</li>
+          <li>Motivation Theory</li>
+          <li>Memory o Forgetting</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">🌈</div>
+        <h4>Inclusive Education</h4>
+        <ul>
+          <li>Special Needs er shishu</li>
+          <li>Learning Disabilities (Dyslexia etc.)</li>
+          <li>Gifted Children</li>
+          <li>Right to Education (RTE) Act</li>
+          <li>Gender o Diversity</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon">📊</div>
+        <h4>Assessment & Evaluation</h4>
+        <ul>
+          <li>CCE — Continuous Comprehensive Evaluation</li>
+          <li>Formative o Summative Assessment</li>
+          <li>Portfolio Assessment</li>
+          <li>Feedback o Remediation</li>
+          <li>NCF 2005 er guidelines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PASSING CRITERIA -->
+  <div class="pass-section">
+    <div class="section-title">
+      <h2>✅ Passing Criteria</h2>
+    </div>
+    <div class="pass-bar-wrap">
+      <p>Minimum qualifying marks required</p>
+      <div class="big-bar">
+        <div class="big-fill"></div>
+      </div>
+      <div class="pass-note" style="margin-top:24px;">
+        <div>General: <strong>60% = 90/150</strong></div>
+        <div>SC / ST: <strong>55% = 82/150</strong></div>
+        <div>OBC-A / OBC-B: <strong>55% = 82/150</strong></div>
+        <div>PH / PWD: <strong>55% = 82/150</strong></div>
+        <div>Ex-Servicemen / DH: <strong>55% = 82/150</strong></div>
+      </div>
+      <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);">
+        <p style="color:#aaa;font-size:0.75rem;">⚠️ Kono Negative Marking nei • Certificate lifetime valid • MCQ format (1 mark each)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    WB-TET Syllabus Infographic • Prepared for Exam Preparation • 2026
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WB-TET — Language I Bengali Notes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #07071a; background-image: radial-gradient(ellipse at 15% 15%, rgba(244,114,182,0.15) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(236,72,153,0.1) 0%, transparent 55%); min-height: 100vh; color: #e2e8f0; padding: 40px 20px 60px; }
+    .breadcrumb { max-width: 1100px; margin: 0 auto 28px; font-size: 0.72rem; color: #666; }
+    .breadcrumb a { color: #f472b6; text-decoration: none; }
+    .breadcrumb span { margin: 0 8px; }
+    .hero { max-width: 1100px; margin: 0 auto 46px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+    .hero-icon { width: 76px; height: 76px; background: linear-gradient(135deg,#f472b6,#ec4899); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 35px rgba(244,114,182,0.3); flex-shrink: 0; }
+    .hero-text .tag { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: #f472b6; font-weight: 600; margin-bottom: 5px; }
+    .hero-text h1 { font-size: clamp(1.6rem,4vw,2.6rem); font-weight: 800; background: linear-gradient(90deg,#f472b6,#fbcfe8,#fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-text p { font-size: 0.78rem; color: #888; margin-top: 6px; }
+
+    .section { max-width: 1100px; margin: 0 auto 52px; }
+    .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .sec-num { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg,#f472b6,#ec4899); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .sec-head h2 { font-size: 1.2rem; font-weight: 700; }
+    .sec-head .sub { font-size: 0.7rem; color: #888; margin-top: 2px; }
+    .imp { display: inline-block; font-size: 0.58rem; font-weight: 700; padding: 2px 7px; border-radius: 50px; margin-left: 6px; background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.35); color: #f87171; vertical-align: middle; letter-spacing: 1px; text-transform: uppercase; }
+
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; margin-bottom: 14px; }
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+
+    h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 10px; }
+    ul { list-style: none; }
+    ul li { font-size: 0.75rem; color: #ccc; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '▸'; color: #f472b6; flex-shrink: 0; margin-top: 1px; }
+    p { font-size: 0.78rem; color: #ccc; line-height: 1.75; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    th { background: rgba(255,255,255,0.06); padding: 9px 13px; text-align: left; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
+    td { padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+
+    .tip { background: rgba(244,114,182,0.07); border: 1px solid rgba(244,114,182,0.2); border-radius: 10px; padding: 12px 14px; font-size: 0.73rem; color: #fbcfe8; display: flex; gap: 8px; margin-top: 12px; }
+    .tip span:first-child { flex-shrink: 0; }
+    .example-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 12px 14px; margin-top: 10px; font-size: 0.74rem; }
+    .example-box .label { font-size: 0.62rem; color: #f472b6; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+
+    .div { max-width: 1100px; margin: 0 auto 46px; height: 1px; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.07),transparent); }
+    footer { text-align: center; font-size: 0.65rem; color: #444; letter-spacing: 1px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<div class="breadcrumb">
+  <a href="paper1-index.html">Paper I Hub</a><span>›</span> Language I — Bengali
+</div>
+
+<div class="hero">
+  <div class="hero-icon">🗣️</div>
+  <div class="hero-text">
+    <div class="tag">Paper I • 30 MCQ • 30 Marks</div>
+    <h1>Language I — Bengali</h1>
+    <p>Grammar + Comprehension + Language Pedagogy — sob covered</p>
+  </div>
+</div>
+
+<!-- SYLLABUS OVERVIEW -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">★</div><div><h2>Syllabus Overview</h2></div></div>
+  <div class="card">
+    <table>
+      <thead><tr><th>Part</th><th>Topics</th><th>Est. Questions</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#f472b6;font-weight:600;">Part A: Language (20 Q)</td><td>Comprehension (Prose + Poem), Grammar, Vocabulary</td><td style="color:#fcd34d;">~20 MCQ</td></tr>
+        <tr><td style="color:#f472b6;font-weight:600;">Part B: Pedagogy (10 Q)</td><td>Language learning theories, Teaching methods, Assessment</td><td style="color:#fcd34d;">~10 MCQ</td></tr>
+      </tbody>
+    </table>
+    <div class="tip"><span>💡</span><span>Part B — Pedagogy te aro beshi focus koro. Theory question gulo high-scoring o predictable.</span></div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- 1. COMPREHENSION -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">1</div><div><h2>Reading Comprehension Strategy <span class="imp">★★★</span></h2></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="color:#f472b6;">Prose Passage — Kivabe korbo</h3>
+      <ul>
+        <li>Age passage er title o first para scan koro</li>
+        <li>Questions age poro — ki khujte hobe jano</li>
+        <li>Answer gulo usually sequence e thake</li>
+        <li>Vocabulary question e context clue use koro</li>
+        <li>Inferred meaning — direct statement noy, bujhe ber korte hobe</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#ec4899;">Poetry Comprehension</h3>
+      <ul>
+        <li>Figurative language: metaphor, simile, alliteration</li>
+        <li>Poet er mood / tone bujhte hobe</li>
+        <li>Central theme ki — main message</li>
+        <li>Imagery — kemon picture create korche</li>
+        <li>Rhyme scheme note koro (ABAB, AABB etc.)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- 2. BENGALI GRAMMAR -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">2</div><div><h2>Bengali Grammar — Key Topics <span class="imp">★★★</span></h2></div></div>
+
+  <!-- SANDHI -->
+  <div class="card">
+    <h3 style="color:#f472b6;margin-bottom:14px;">Sandhi (সন্ধি) — Word joining</h3>
+    <table>
+      <thead><tr><th>Type</th><th>Rule</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#fbcfe8;">Swara Sandhi</td><td>Dui swar mile</td><td>বিদ্যা + আলয় = বিদ্যালয়</td></tr>
+        <tr><td style="color:#fbcfe8;">Byanjan Sandhi</td><td>Byanjan + Byanjan</td><td>উৎ + পত্তি = উৎপত্তি</td></tr>
+        <tr><td style="color:#fbcfe8;">Bisarga Sandhi</td><td>Bisarga + Byanjan</td><td>নিঃ + ফল = নিষ্ফল</td></tr>
+      </tbody>
+    </table>
+    <div class="tip"><span>💡</span><span>Sandhi bichhed mane — jukto shabdoke alag kora. Sandhi mane — mile jaoa.</span></div>
+  </div>
+
+  <!-- SAMAS -->
+  <div class="card">
+    <h3 style="color:#f472b6;margin-bottom:14px;">Samas (সমাস) — Compound Words</h3>
+    <table>
+      <thead><tr><th>Type</th><th>Feature</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#fbcfe8;">Dwanda Samas</td><td>Duto shabd equal importance e</td><td>দিনরাত, মাতাপিতা, ভালোমন্দ</td></tr>
+        <tr><td style="color:#fbcfe8;">Tatpurush Samas</td><td>Porer shabd important</td><td>ঘরের ছেলে → ঘরছেলে</td></tr>
+        <tr><td style="color:#fbcfe8;">Karmadharaya</td><td>Visheshan + Visheshya</td><td>নীল + আকাশ = নীলাকাশ</td></tr>
+        <tr><td style="color:#fbcfe8;">Bahubrihi</td><td>Trity party ke bujhay</td><td>চতুর্ভুজ = চার বাহু আছে যার (মানে quadrilateral)</td></tr>
+        <tr><td style="color:#fbcfe8;">Dwigu Samas</td><td>Sankhya purbopad</td><td>ত্রিভুজ, চতুর্দিক, পঞ্চবটী</td></tr>
+        <tr><td style="color:#fbcfe8;">Avyayibhav</td><td>Avyay purbopad</td><td>যথাসাধ্য, প্রতিদিন</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- KARAK -->
+  <div class="card">
+    <h3 style="color:#f472b6;margin-bottom:14px;">Karak (কারক) — Case Relations <span class="imp">★★★</span></h3>
+    <table>
+      <thead><tr><th>Karak</th><th>Question</th><th>Vibhakti</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#fbcfe8;font-weight:600;">Kartri (কর্তৃ)</td><td>কে / কারা?</td><td>এ, রা, য়</td><td>রাম বই পড়ে → <b>রাম</b> = কর্তৃ</td></tr>
+        <tr><td style="color:#fbcfe8;font-weight:600;">Karma (কর্ম)</td><td>কাকে / কী?</td><td>কে, দের</td><td>রাম বই পড়ে → <b>বই</b> = কর্ম</td></tr>
+        <tr><td style="color:#fbcfe8;font-weight:600;">Karana (করণ)</td><td>কী দিয়ে?</td><td>দিয়ে, দ্বারা</td><td>কলম <b>দিয়ে</b> লিখি</td></tr>
+        <tr><td style="color:#fbcfe8;font-weight:600;">Sampradaan (সম্প্রদান)</td><td>কাকে দেওয়া?</td><td>কে, দের জন্য</td><td>গরীব<b>কে</b> দান করো</td></tr>
+        <tr><td style="color:#fbcfe8;font-weight:600;">Apadaan (অপাদান)</td><td>কোথা থেকে?</td><td>থেকে, হতে</td><td>গাছ <b>থেকে</b> পাতা পড়ে</td></tr>
+        <tr><td style="color:#fbcfe8;font-weight:600;">Adhikarana (অধিকরণ)</td><td>কোথায় / কখন?</td><td>এ, তে, য়</td><td>ঘর<b>ে</b> থাকি</td></tr>
+      </tbody>
+    </table>
+    <div class="tip"><span>💡</span><span>Sambandha Karak (সম্বন্ধ) — কারক noy, kintu exam e ashe: "র, এর, দের" vibhakti</span></div>
+  </div>
+
+  <!-- VOCABULARY -->
+  <div class="card">
+    <h3 style="color:#f472b6;margin-bottom:14px;">Vocabulary — Synonyms, Antonyms, One-Word</h3>
+    <div class="grid2">
+      <div>
+        <p style="color:#fbcfe8;font-weight:600;font-size:0.78rem;margin-bottom:10px;">Common Synonyms (Protiśabda)</p>
+        <table>
+          <tbody>
+            <tr><td style="color:#aaa;">আকাশ</td><td>নভঃ, গগন, অম্বর, ব্যোম</td></tr>
+            <tr><td style="color:#aaa;">পানি/জল</td><td>বারি, সলিল, নীর, তোয়</td></tr>
+            <tr><td style="color:#aaa;">আলো</td><td>দীপ্তি, কিরণ, আভা, জ্যোতি</td></tr>
+            <tr><td style="color:#aaa;">সূর্য</td><td>ভানু, রবি, দিনকর, দিবাকর</td></tr>
+            <tr><td style="color:#aaa;">মাটি</td><td>ক্ষিতি, ধরা, ভূমি, পৃথিবী</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <p style="color:#fbcfe8;font-weight:600;font-size:0.78rem;margin-bottom:10px;">Common Antonyms (Biporitarth)</p>
+        <table>
+          <tbody>
+            <tr><td style="color:#aaa;">আলো</td><td>অন্ধকার</td></tr>
+            <tr><td style="color:#aaa;">সুখ</td><td>দুঃখ</td></tr>
+            <tr><td style="color:#aaa;">জ্ঞান</td><td>অজ্ঞান / মূর্খতা</td></tr>
+            <tr><td style="color:#aaa;">উন্নতি</td><td>অবনতি</td></tr>
+            <tr><td style="color:#aaa;">সৎ</td><td>অসৎ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="div"></div>
+
+<!-- 3. LANGUAGE PEDAGOGY -->
+<div class="section">
+  <div class="sec-head"><div class="sec-num">3</div><div><h2>Language Pedagogy <span class="imp">★★★</span></h2><div class="sub">Exam e 8–10 questions sure</div></div></div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3 style="color:#f472b6;">Chomsky er Language Theory</h3>
+      <ul>
+        <li><b style="color:#fbcfe8;">LAD</b> — Language Acquisition Device — brain e built-in</li>
+        <li>Shishu janmogate language learn korte programme</li>
+        <li>Universal Grammar — sob language e common structure</li>
+        <li>Nativist Theory — language innate (born with it)</li>
+        <li>Surface structure vs Deep structure of sentences</li>
+      </ul>
+      <div class="tip"><span>💡</span><span>Chomsky bolen — shishu ke sikhate hoy na, nijei shikhey nay — LAD er jonno</span></div>
+    </div>
+    <div class="card">
+      <h3 style="color:#ec4899;">Krashen er 5 Hypotheses</h3>
+      <ul>
+        <li><b style="color:#fbcfe8;">1. Acquisition-Learning Hypothesis</b> — Acquisition (natural) vs Learning (conscious)</li>
+        <li><b style="color:#fbcfe8;">2. Monitor Hypothesis</b> — Conscious rules correct kore</li>
+        <li><b style="color:#fbcfe8;">3. Natural Order Hypothesis</b> — Grammar ek natural order e learn hoy</li>
+        <li><b style="color:#fbcfe8;">4. Input Hypothesis (i+1)</b> — Slightly above current level input best</li>
+        <li><b style="color:#fbcfe8;">5. Affective Filter Hypothesis</b> — Low anxiety = better language learning</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#f472b6;">Language Skills — 4 Types</h3>
+      <ul>
+        <li><b style="color:#fbcfe8;">Listening (শোনা)</b> — Receptive skill — passive</li>
+        <li><b style="color:#fbcfe8;">Speaking (বলা)</b> — Productive skill — active</li>
+        <li><b style="color:#fbcfe8;">Reading (পড়া)</b> — Receptive skill — passive</li>
+        <li><b style="color:#fbcfe8;">Writing (লেখা)</b> — Productive skill — active</li>
+      </ul>
+      <div class="tip"><span>💡</span><span>Natural order: Listening → Speaking → Reading → Writing</span></div>
+    </div>
+    <div class="card">
+      <h3 style="color:#ec4899;">Language Teaching Methods</h3>
+      <ul>
+        <li><b style="color:#fbcfe8;">Grammar-Translation Method</b> — Rules mene pore anuvad kora (old method)</li>
+        <li><b style="color:#fbcfe8;">Direct Method</b> — Target language te direct teach, no translation</li>
+        <li><b style="color:#fbcfe8;">Audio-Lingual Method</b> — Drilling o repetition — habit formation</li>
+        <li><b style="color:#fbcfe8;">Communicative Approach (CLT)</b> — Real communication focus — best</li>
+        <li><b style="color:#fbcfe8;">Task-Based Learning</b> — Real-life tasks diye language shikha</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:#f472b6;margin-bottom:14px;">Language Acquisition vs Language Learning</h3>
+    <table>
+      <thead><tr><th>Aspect</th><th>Acquisition (Krashen)</th><th>Learning</th></tr></thead>
+      <tbody>
+        <tr><td>Process</td><td style="color:#86efac;">Natural, subconscious</td><td style="color:#fcd34d;">Formal, conscious</td></tr>
+        <tr><td>How</td><td style="color:#86efac;">Exposure to language e</td><td style="color:#fcd34d;">Rules pore, practice kore</td></tr>
+        <tr><td>Example</td><td style="color:#86efac;">Shishu maa-baba dekhe bola shikhey</td><td style="color:#fcd34d;">School e grammar class</td></tr>
+        <tr><td>Better for fluency?</td><td style="color:#86efac;">Yes — more natural</td><td style="color:#fcd34d;">Helps accuracy</td></tr>
+      </tbody>
+    </table>
+    <div class="tip"><span>💡</span><span>Primary school e acquisition-based approach better — environment create kore daa, rules mene noy</span></div>
+  </div>
+</div>
+
+<footer>WB-TET Paper I — Language I (Bengali) Notes • 2026</footer>
+</body>
+</html>
