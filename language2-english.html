@@ -7,46 +7,46 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Poppins', sans-serif; background: #07071a; background-image: radial-gradient(ellipse at 15% 15%, rgba(34,211,238,0.15) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(59,130,246,0.1) 0%, transparent 55%); min-height: 100vh; color: #e2e8f0; padding: 40px 20px 60px; }
-    .breadcrumb { max-width: 1100px; margin: 0 auto 28px; font-size: 0.72rem; color: #666; }
+    body { font-family: 'Poppins', sans-serif; background: #FFF0F5; background-image: radial-gradient(ellipse at 15% 15%, rgba(34,211,238,0.15) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(59,130,246,0.1) 0%, transparent 55%); min-height: 100vh; color: #6B4E71; padding: 40px 20px 60px; }
+    .breadcrumb { max-width: 1100px; margin: 0 auto 28px; font-size: 0.72rem; color: #A88BB5; }
     .breadcrumb a { color: #22d3ee; text-decoration: none; }
     .breadcrumb span { margin: 0 8px; }
     .hero { max-width: 1100px; margin: 0 auto 46px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
     .hero-icon { width: 76px; height: 76px; background: linear-gradient(135deg,#22d3ee,#3b82f6); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 35px rgba(34,211,238,0.3); flex-shrink: 0; }
     .hero-text .tag { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: #22d3ee; font-weight: 600; margin-bottom: 5px; }
     .hero-text h1 { font-size: clamp(1.6rem,4vw,2.6rem); font-weight: 800; background: linear-gradient(90deg,#22d3ee,#93c5fd,#fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-text p { font-size: 0.78rem; color: #888; margin-top: 6px; }
+    .hero-text p { font-size: 0.78rem; color: #9B7FA6; margin-top: 6px; }
 
     .section { max-width: 1100px; margin: 0 auto 52px; }
     .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .sec-num { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg,#22d3ee,#3b82f6); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .sec-num { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg,#22d3ee,#3b82f6); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #6B4E71; flex-shrink: 0; }
     .sec-head h2 { font-size: 1.2rem; font-weight: 700; }
-    .sec-head .sub { font-size: 0.7rem; color: #888; margin-top: 2px; }
+    .sec-head .sub { font-size: 0.7rem; color: #9B7FA6; margin-top: 2px; }
     .imp { display: inline-block; font-size: 0.58rem; font-weight: 700; padding: 2px 7px; border-radius: 50px; margin-left: 6px; background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.35); color: #f87171; vertical-align: middle; letter-spacing: 1px; text-transform: uppercase; }
 
-    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; margin-bottom: 14px; }
+    .card { background: rgba(150,110,160,0.10); border: 1px solid rgba(150,110,160,0.10); border-radius: 18px; padding: 22px; margin-bottom: 14px; }
     .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 
     h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 10px; }
     ul { list-style: none; }
-    ul li { font-size: 0.75rem; color: #ccc; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    ul li { font-size: 0.75rem; color: #7A5E85; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(150,110,160,0.10); }
     ul li:last-child { border-bottom: none; }
     ul li::before { content: '▸'; color: #22d3ee; flex-shrink: 0; margin-top: 1px; }
-    p { font-size: 0.78rem; color: #ccc; line-height: 1.75; }
+    p { font-size: 0.78rem; color: #7A5E85; line-height: 1.75; }
 
     table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
-    th { background: rgba(255,255,255,0.06); padding: 9px 13px; text-align: left; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
-    td { padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    th { background: rgba(150,110,160,0.10); padding: 9px 13px; text-align: left; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: #8A6E95; }
+    td { padding: 9px 13px; border-bottom: 1px solid rgba(150,110,160,0.10); vertical-align: top; }
     tr:last-child td { border-bottom: none; }
 
     .tip { background: rgba(34,211,238,0.07); border: 1px solid rgba(34,211,238,0.2); border-radius: 10px; padding: 12px 14px; font-size: 0.73rem; color: #a5f3fc; display: flex; gap: 8px; margin-top: 12px; }
     .tip span:first-child { flex-shrink: 0; }
-    .div { max-width: 1100px; margin: 0 auto 46px; height: 1px; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.07),transparent); }
-    footer { text-align: center; font-size: 0.65rem; color: #444; letter-spacing: 1px; margin-top: 10px; }
+    .div { max-width: 1100px; margin: 0 auto 46px; height: 1px; background: linear-gradient(90deg,transparent,rgba(150,110,160,0.10),transparent); }
+    footer { text-align: center; font-size: 0.65rem; color: #B59CC0; letter-spacing: 1px; margin-top: 10px; }
     .tense-box { background: rgba(34,211,238,0.05); border: 1px solid rgba(34,211,238,0.15); border-radius: 10px; padding: 10px 12px; font-size: 0.73rem; margin-bottom: 8px; }
     .tense-box .t-name { color: #22d3ee; font-weight: 700; margin-bottom: 4px; font-size: 0.72rem; }
-    .tense-box .t-form { color: #aaa; font-size: 0.68rem; }
-    .tense-box .t-ex { color: #e2e8f0; margin-top: 4px; }
+    .tense-box .t-form { color: #8A6E95; font-size: 0.68rem; }
+    .tense-box .t-ex { color: #6B4E71; margin-top: 4px; }
   
     /* ── MOBILE RESPONSIVE ── */
     @media (max-width: 640px) {
@@ -245,27 +245,27 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
       <div style="background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);border-radius:10px;padding:12px;font-size:0.74rem;">
         <div style="color:#22d3ee;font-weight:700;margin-bottom:5px;">Parts of Speech</div>
-        <div style="color:#aaa;">Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, Interjection</div>
+        <div style="color:#8A6E95;">Noun, Pronoun, Verb, Adjective, Adverb, Preposition, Conjunction, Interjection</div>
       </div>
       <div style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15);border-radius:10px;padding:12px;font-size:0.74rem;">
         <div style="color:#60a5fa;font-weight:700;margin-bottom:5px;">Degrees of Comparison</div>
-        <div style="color:#aaa;">Positive / Comparative / Superlative<br>good → better → best</div>
+        <div style="color:#8A6E95;">Positive / Comparative / Superlative<br>good → better → best</div>
       </div>
       <div style="background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.15);border-radius:10px;padding:12px;font-size:0.74rem;">
         <div style="color:#a78bfa;font-weight:700;margin-bottom:5px;">Modals</div>
-        <div style="color:#aaa;">can, could, may, might, shall, should, will, would, must, ought to</div>
+        <div style="color:#8A6E95;">can, could, may, might, shall, should, will, would, must, ought to</div>
       </div>
       <div style="background:rgba(244,114,182,0.06);border:1px solid rgba(244,114,182,0.15);border-radius:10px;padding:12px;font-size:0.74rem;">
         <div style="color:#f472b6;font-weight:700;margin-bottom:5px;">Subject-Verb Agreement</div>
-        <div style="color:#aaa;">Singular subject → singular verb. Each/Every → singular.</div>
+        <div style="color:#8A6E95;">Singular subject → singular verb. Each/Every → singular.</div>
       </div>
       <div style="background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.15);border-radius:10px;padding:12px;font-size:0.74rem;">
         <div style="color:#34d399;font-weight:700;margin-bottom:5px;">Clauses</div>
-        <div style="color:#aaa;">Main clause, Subordinate clause, Relative clause</div>
+        <div style="color:#8A6E95;">Main clause, Subordinate clause, Relative clause</div>
       </div>
       <div style="background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.15);border-radius:10px;padding:12px;font-size:0.74rem;">
         <div style="color:#fbbf24;font-weight:700;margin-bottom:5px;">Idioms & Phrases</div>
-        <div style="color:#aaa;">kick the bucket, break the ice, under the weather</div>
+        <div style="color:#8A6E95;">kick the bucket, break the ice, under the weather</div>
       </div>
     </div>
   </div>

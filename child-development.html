@@ -9,9 +9,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0a0a1a;
-      --card: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.09);
+      --bg: #FFF0F5;
+      --card: rgba(150,110,160,0.10);
+      --border: rgba(150,110,160,0.10);
       --yellow: #ffd200;
       --orange: #f7971e;
       --purple: #a78bfa;
@@ -27,7 +27,7 @@
       background-image: radial-gradient(ellipse at 20% 20%, rgba(102,126,234,0.15) 0%, transparent 50%),
                         radial-gradient(ellipse at 80% 80%, rgba(247,151,30,0.1) 0%, transparent 50%);
       min-height: 100vh;
-      color: #e2e8f0;
+      color: #6B4E71;
       padding: 40px 20px 60px;
     }
 
@@ -36,7 +36,7 @@
       max-width: 1100px;
       margin: 0 auto 30px;
       font-size: 0.72rem;
-      color: #666;
+      color: #A88BB5;
     }
     .breadcrumb a { color: var(--orange); text-decoration: none; }
     .breadcrumb span { margin: 0 8px; }
@@ -66,10 +66,10 @@
     .hero-text h1 {
       font-size: clamp(1.6rem, 4vw, 2.8rem);
       font-weight: 800;
-      background: linear-gradient(90deg, #a78bfa, #60a5fa, #e2e8f0);
+      background: linear-gradient(90deg, #a78bfa, #60a5fa, #6B4E71);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .hero-text p { font-size: 0.8rem; color: #888; margin-top: 6px; }
+    .hero-text p { font-size: 0.8rem; color: #9B7FA6; margin-top: 6px; }
     .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
     .hero-pills span {
       font-size: 0.68rem; padding: 5px 14px; border-radius: 50px;
@@ -85,7 +85,7 @@
     }
     .topic-nav a {
       font-size: 0.72rem; padding: 8px 16px; border-radius: 50px; text-decoration: none;
-      background: var(--card); border: 1px solid var(--border); color: #aaa;
+      background: var(--card); border: 1px solid var(--border); color: #8A6E95;
       transition: all 0.2s;
     }
     .topic-nav a:hover { background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.4); color: var(--purple); }
@@ -104,10 +104,10 @@
       width: 38px; height: 38px; border-radius: 12px;
       background: linear-gradient(135deg, var(--c1), var(--c2));
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; font-weight: 700; color: #fff; flex-shrink: 0;
+      font-size: 0.85rem; font-weight: 700; color: #6B4E71; flex-shrink: 0;
     }
     .section-header h2 { font-size: 1.3rem; font-weight: 700; }
-    .section-header .sub { font-size: 0.72rem; color: #888; margin-top: 2px; }
+    .section-header .sub { font-size: 0.72rem; color: #9B7FA6; margin-top: 2px; }
 
     /* THEORY CARD */
     .theory-card {
@@ -121,13 +121,13 @@
       padding: 18px 22px;
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; gap: 14px;
-      background: rgba(255,255,255,0.03);
+      background: rgba(150,110,160,0.10);
       cursor: pointer;
     }
     .tc-head .icon { font-size: 1.4rem; width: 36px; text-align: center; flex-shrink: 0; }
     .tc-head-text { flex: 1; }
     .tc-head-text h3 { font-size: 0.95rem; font-weight: 700; }
-    .tc-head-text p  { font-size: 0.7rem; color: #888; margin-top: 2px; }
+    .tc-head-text p  { font-size: 0.7rem; color: #9B7FA6; margin-top: 2px; }
     .tc-tag {
       font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; padding: 4px 10px;
       border-radius: 50px; flex-shrink: 0;
@@ -137,13 +137,13 @@
     /* STAGE TABLE */
     .stage-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
     .stage-table th {
-      background: rgba(255,255,255,0.07);
+      background: rgba(150,110,160,0.10);
       padding: 10px 14px; text-align: left;
-      font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa;
+      font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; color: #8A6E95;
     }
-    .stage-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    .stage-table td { padding: 10px 14px; border-bottom: 1px solid rgba(150,110,160,0.10); vertical-align: top; }
     .stage-table tr:last-child td { border-bottom: none; }
-    .stage-table tr:hover td { background: rgba(255,255,255,0.03); }
+    .stage-table tr:hover td { background: rgba(150,110,160,0.10); }
     .stage-badge {
       display: inline-block; font-size: 0.62rem; font-weight: 700;
       padding: 3px 10px; border-radius: 50px; white-space: nowrap;
@@ -161,9 +161,9 @@
     .kbox h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 10px; }
     .kbox ul { list-style: none; }
     .kbox ul li {
-      font-size: 0.76rem; color: #ccc; padding: 5px 0;
+      font-size: 0.76rem; color: #7A5E85; padding: 5px 0;
       display: flex; gap: 8px; align-items: flex-start;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(150,110,160,0.10);
     }
     .kbox ul li:last-child { border-bottom: none; }
     .kbox ul li::before { content: '▸'; flex-shrink: 0; margin-top: 1px; }
@@ -190,13 +190,13 @@
       padding: 10px 14px; text-align: left; font-size: 0.68rem;
       letter-spacing: 1px; text-transform: uppercase;
     }
-    .comp-table td { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .comp-table td { padding: 10px 14px; border-bottom: 1px solid rgba(150,110,160,0.10); }
     .comp-table tr:last-child td { border-bottom: none; }
-    .comp-table tr:hover td { background: rgba(255,255,255,0.03); }
+    .comp-table tr:hover td { background: rgba(150,110,160,0.10); }
 
     /* DIVIDER */
     .div { max-width: 1100px; margin: 0 auto 50px; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
+      background: linear-gradient(90deg, transparent, rgba(150,110,160,0.10), transparent); }
 
     /* IMPORTANT TAG */
     .imp {
@@ -213,10 +213,10 @@
       border-radius: 14px; padding: 16px; text-align: center;
     }
     .qf-card .qf-num { font-size: 1.8rem; font-weight: 800; }
-    .qf-card .qf-lbl { font-size: 0.68rem; color: #888; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+    .qf-card .qf-lbl { font-size: 0.68rem; color: #9B7FA6; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
     /* FOOTER */
-    footer { text-align: center; font-size: 0.68rem; color: #444; letter-spacing: 1px; margin-top: 20px; }
+    footer { text-align: center; font-size: 0.68rem; color: #B59CC0; letter-spacing: 1px; margin-top: 20px; }
   
     /* ── MOBILE RESPONSIVE ── */
     @media (max-width: 640px) {
@@ -250,7 +250,7 @@
       max-width: 1100px; margin: 0 auto 28px; padding: 18px 24px;
       border-radius: 18px; border-left: 5px solid;
       border-image: linear-gradient(180deg, var(--g1), var(--g2)) 1;
-      background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+      background: linear-gradient(90deg, rgba(150,110,160,0.10), rgba(150,110,160,0.10));
     }
     .group-banner h2 {
       font-size: 1.5rem; font-weight: 800;
@@ -402,7 +402,7 @@
       </div>
     </div>
     <div class="hbox" style="background:rgba(167,139,250,0.08);border-color:#a78bfa;margin-top:12px;">
-      <b style="color:#a78bfa;">Current View:</b> <span style="color:#ccc;">Nature AND nurture — duto miliye bikash hoy. Neither alone is sufficient. Interaction of genes + environment = development.</span>
+      <b style="color:#a78bfa;">Current View:</b> <span style="color:#7A5E85;">Nature AND nurture — duto miliye bikash hoy. Neither alone is sufficient. Interaction of genes + environment = development.</span>
     </div>
   </div>
 
@@ -430,35 +430,35 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
           <div style="background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">📖</div>
-            <b style="color:#60a5fa;">Linguistic</b><br><span style="color:#aaa;">Bhasha o writing skill</span>
+            <b style="color:#60a5fa;">Linguistic</b><br><span style="color:#8A6E95;">Bhasha o writing skill</span>
           </div>
           <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">🔢</div>
-            <b style="color:#34d399;">Logical-Mathematical</b><br><span style="color:#aaa;">Number o logic</span>
+            <b style="color:#34d399;">Logical-Mathematical</b><br><span style="color:#8A6E95;">Number o logic</span>
           </div>
           <div style="background:rgba(244,114,182,0.08);border:1px solid rgba(244,114,182,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">🎵</div>
-            <b style="color:#f472b6;">Musical</b><br><span style="color:#aaa;">Sangeet o rhythm</span>
+            <b style="color:#f472b6;">Musical</b><br><span style="color:#8A6E95;">Sangeet o rhythm</span>
           </div>
           <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">⚽</div>
-            <b style="color:#fbbf24;">Bodily-Kinesthetic</b><br><span style="color:#aaa;">Body movement</span>
+            <b style="color:#fbbf24;">Bodily-Kinesthetic</b><br><span style="color:#8A6E95;">Body movement</span>
           </div>
           <div style="background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">🗺️</div>
-            <b style="color:#22d3ee;">Spatial</b><br><span style="color:#aaa;">Visual o space</span>
+            <b style="color:#22d3ee;">Spatial</b><br><span style="color:#8A6E95;">Visual o space</span>
           </div>
           <div style="background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">🤝</div>
-            <b style="color:#a78bfa;">Interpersonal</b><br><span style="color:#aaa;">Onyer shathe mela</span>
+            <b style="color:#a78bfa;">Interpersonal</b><br><span style="color:#8A6E95;">Onyer shathe mela</span>
           </div>
           <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">🪞</div>
-            <b style="color:#f87171;">Intrapersonal</b><br><span style="color:#aaa;">Nijer shathe bujhapora</span>
+            <b style="color:#f87171;">Intrapersonal</b><br><span style="color:#8A6E95;">Nijer shathe bujhapora</span>
           </div>
           <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:10px;padding:12px;font-size:0.75rem;">
             <div style="font-size:1.2rem;margin-bottom:6px;">🌿</div>
-            <b style="color:#34d399;">Naturalist</b><br><span style="color:#aaa;">Prakriti o environment</span>
+            <b style="color:#34d399;">Naturalist</b><br><span style="color:#8A6E95;">Prakriti o environment</span>
           </div>
         </div>
         <div class="mem-tip">
@@ -530,7 +530,7 @@
           <div style="padding:10px;background:rgba(239,68,68,0.12);border-radius:8px;text-align:center;font-size:0.78rem;border:1px solid rgba(239,68,68,0.25);"><b style="color:#f87171;">1. Physiological</b> — Food, water, sleep — basic needs first</div>
         </div>
         <div class="hbox" style="background:rgba(247,151,30,0.08);border-color:#f7971e;margin-top:14px;">
-          <b style="color:#fbbf24;">Classroom implication:</b> <span style="color:#ccc;">Shishu r basic needs (1-2) purno na hole higher learning (4-5) possible noy</span>
+          <b style="color:#fbbf24;">Classroom implication:</b> <span style="color:#7A5E85;">Shishu r basic needs (1-2) purno na hole higher learning (4-5) possible noy</span>
         </div>
       </div>
     </div>
@@ -675,7 +675,7 @@
       </div>
     </div>
     <div class="hbox" style="background:rgba(102,126,234,0.08);border-color:#667eea;margin-top:12px;">
-      <b style="color:#a78bfa;">Classroom Application:</b> <span style="color:#ccc;">Project work, hands-on activities, group discussion, problem-based learning, inquiry-based teaching — all constructivist approaches</span>
+      <b style="color:#a78bfa;">Classroom Application:</b> <span style="color:#7A5E85;">Project work, hands-on activities, group discussion, problem-based learning, inquiry-based teaching — all constructivist approaches</span>
     </div>
   </div>
 
@@ -814,7 +814,7 @@
         <div class="tc-tag" style="background:rgba(102,126,234,0.2);border:1px solid rgba(102,126,234,0.4);color:#a78bfa;">Constructivism</div>
       </div>
       <div class="tc-body">
-        <p style="font-size:0.8rem;color:#ccc;margin-bottom:16px;">Piaget bolen — shishu 4 ta stage e develop kore, each stage te notun logical thinking develop hoy.</p>
+        <p style="font-size:0.8rem;color:#7A5E85;margin-bottom:16px;">Piaget bolen — shishu 4 ta stage e develop kore, each stage te notun logical thinking develop hoy.</p>
         <table class="stage-table">
           <thead><tr>
             <th>Stage</th><th>Age</th><th>Key Feature</th><th>Example</th>
@@ -823,32 +823,32 @@
             <tr>
               <td><span class="stage-badge" style="background:rgba(96,165,250,0.2);color:#60a5fa;border:1px solid rgba(96,165,250,0.3);">Sensorimotor</span></td>
               <td style="color:#fcd34d;">0–2 yrs</td>
-              <td>Senses o motor action diye jante chaoy<br><small style="color:#888;">Object Permanence develop hoy</small></td>
-              <td style="color:#aaa;font-size:0.72rem;">Ball lukiye rakhle khuje berao</td>
+              <td>Senses o motor action diye jante chaoy<br><small style="color:#9B7FA6;">Object Permanence develop hoy</small></td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Ball lukiye rakhle khuje berao</td>
             </tr>
             <tr>
               <td><span class="stage-badge" style="background:rgba(167,139,250,0.2);color:#a78bfa;border:1px solid rgba(167,139,250,0.3);">Pre-operational</span></td>
               <td style="color:#fcd34d;">2–7 yrs</td>
-              <td>Language o symbols use kore<br><small style="color:#888;">Egocentrism, Animism, Centration</small></td>
-              <td style="color:#aaa;font-size:0.72rem;">Nij dr perspective e shob bujhe</td>
+              <td>Language o symbols use kore<br><small style="color:#9B7FA6;">Egocentrism, Animism, Centration</small></td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Nij dr perspective e shob bujhe</td>
             </tr>
             <tr>
               <td><span class="stage-badge" style="background:rgba(52,211,153,0.2);color:#34d399;border:1px solid rgba(52,211,153,0.3);">Concrete Operational</span></td>
               <td style="color:#fcd34d;">7–11 yrs</td>
-              <td>Logical thinking (concrete objects e)<br><small style="color:#888;">Conservation, Reversibility, Seriation</small></td>
-              <td style="color:#aaa;font-size:0.72rem;">Paani gondone same thake bujhe</td>
+              <td>Logical thinking (concrete objects e)<br><small style="color:#9B7FA6;">Conservation, Reversibility, Seriation</small></td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Paani gondone same thake bujhe</td>
             </tr>
             <tr>
               <td><span class="stage-badge" style="background:rgba(244,114,182,0.2);color:#f472b6;border:1px solid rgba(244,114,182,0.3);">Formal Operational</span></td>
               <td style="color:#fcd34d;">11+ yrs</td>
-              <td>Abstract reasoning, Hypothetical thinking<br><small style="color:#888;">Scientific o logical reasoning</small></td>
-              <td style="color:#aaa;font-size:0.72rem;">If-then reasoning, future planning</td>
+              <td>Abstract reasoning, Hypothetical thinking<br><small style="color:#9B7FA6;">Scientific o logical reasoning</small></td>
+              <td style="color:#8A6E95;font-size:0.72rem;">If-then reasoning, future planning</td>
             </tr>
           </tbody>
         </table>
         <div class="hbox" style="background:rgba(102,126,234,0.08);border-color:#667eea;">
           <strong style="color:#a78bfa;">Key Terms to Remember:</strong><br>
-          <span style="color:#ccc;">
+          <span style="color:#7A5E85;">
             <b style="color:#60a5fa;">Assimilation</b> — notun info purano schema te fit kora |
             <b style="color:#60a5fa;">Accommodation</b> — schema change kore notun info newa |
             <b style="color:#60a5fa;">Equilibration</b> — balance maintain kora |
@@ -885,7 +885,7 @@
           <div class="tc-tag" style="background:rgba(34,211,238,0.15);border:1px solid rgba(34,211,238,0.3);color:#22d3ee;">Core Concept</div>
         </div>
         <div class="tc-body">
-          <div style="font-size:0.78rem;color:#ccc;">
+          <div style="font-size:0.78rem;color:#7A5E85;">
             <p style="margin-bottom:12px;"><b style="color:#22d3ee;">ZPD = </b>ja shishu ekhon korte parche na, kintu help paile korte parbey</p>
             <div style="display:flex;gap:8px;flex-direction:column;">
               <div style="padding:10px 14px;background:rgba(34,211,238,0.08);border-radius:10px;border-left:3px solid #22d3ee;">
@@ -911,12 +911,12 @@
           </div>
           <div class="tc-tag" style="background:rgba(34,211,238,0.15);border:1px solid rgba(34,211,238,0.3);color:#22d3ee;">Key Concept</div>
         </div>
-        <div class="tc-body" style="font-size:0.78rem;color:#ccc;">
+        <div class="tc-body" style="font-size:0.78rem;color:#7A5E85;">
           <p style="margin-bottom:12px;">Teacher temporary support dey — shishu shikhe gele support remove kore dey</p>
           <ul style="list-style:none;">
-            <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Hints o clues deoa</li>
-            <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Example dekhano</li>
-            <li style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Gradually support komanো</li>
+            <li style="padding:6px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Hints o clues deoa</li>
+            <li style="padding:6px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Example dekhano</li>
+            <li style="padding:6px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Gradually support komanো</li>
             <li style="padding:6px 0;">▸ Shishu independent hole scaffolding hatano</li>
           </ul>
           <div class="mem-tip" style="margin-top:12px;">
@@ -937,11 +937,11 @@
       </div>
       <div class="tc-body">
         <div class="grid2">
-          <div style="font-size:0.78rem;color:#ccc;">
+          <div style="font-size:0.78rem;color:#7A5E85;">
             <p style="margin-bottom:10px;color:#22d3ee;font-weight:600;">Private Speech (Inner Speech)</p>
             <p>Shishu nijer sathe kotha bole — thought er part. Piaget eita egocentric bolthen, kintu Vygotsky bolen eta thinking tool.</p>
           </div>
-          <div style="font-size:0.78rem;color:#ccc;">
+          <div style="font-size:0.78rem;color:#7A5E85;">
             <p style="margin-bottom:10px;color:#3b82f6;font-weight:600;">Piaget vs Vygotsky</p>
             <p><b style="color:#a78bfa;">Piaget:</b> Development e Learning hoy (pore)<br><b style="color:#22d3ee;">Vygotsky:</b> Learning e Development hoy (aage)</p>
           </div>
@@ -969,42 +969,42 @@
           <tbody>
             <tr>
               <td rowspan="2" style="color:#f472b6;font-weight:600;vertical-align:middle;">
-                Pre-conventional<br><small style="color:#888;font-weight:400;">Atyachar o pashar jonne</small>
+                Pre-conventional<br><small style="color:#9B7FA6;font-weight:400;">Atyachar o pashar jonne</small>
               </td>
               <td><b>Stage 1:</b> Obedience & Punishment</td>
               <td style="color:#fcd34d;">~4–7</td>
-              <td style="color:#aaa;font-size:0.72rem;">Rule mane shoddho punishment er bhoy e</td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Rule mane shoddho punishment er bhoy e</td>
             </tr>
             <tr>
               <td><b>Stage 2:</b> Self-Interest / Reward</td>
               <td style="color:#fcd34d;">~7–10</td>
-              <td style="color:#aaa;font-size:0.72rem;">Nijer faidar jonne valo kaje</td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Nijer faidar jonne valo kaje</td>
             </tr>
             <tr>
               <td rowspan="2" style="color:#34d399;font-weight:600;vertical-align:middle;">
-                Conventional<br><small style="color:#888;font-weight:400;">Most adults</small>
+                Conventional<br><small style="color:#9B7FA6;font-weight:400;">Most adults</small>
               </td>
               <td><b>Stage 3:</b> Good Boy/Girl</td>
               <td style="color:#fcd34d;">~10–13</td>
-              <td style="color:#aaa;font-size:0.72rem;">Somajer approval er jonno</td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Somajer approval er jonno</td>
             </tr>
             <tr>
               <td><b>Stage 4:</b> Law & Order</td>
               <td style="color:#fcd34d;">Teen+</td>
-              <td style="color:#aaa;font-size:0.72rem;">Niyom o somaj rokhar jonno</td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Niyom o somaj rokhar jonno</td>
             </tr>
             <tr>
               <td rowspan="2" style="color:#60a5fa;font-weight:600;vertical-align:middle;">
-                Post-conventional<br><small style="color:#888;font-weight:400;">Few people reach</small>
+                Post-conventional<br><small style="color:#9B7FA6;font-weight:400;">Few people reach</small>
               </td>
               <td><b>Stage 5:</b> Social Contract</td>
               <td style="color:#fcd34d;">Adult</td>
-              <td style="color:#aaa;font-size:0.72rem;">Somajer valo er jonno niyom change hote pare</td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Somajer valo er jonno niyom change hote pare</td>
             </tr>
             <tr>
               <td><b>Stage 6:</b> Universal Ethics</td>
               <td style="color:#fcd34d;">Very few</td>
-              <td style="color:#aaa;font-size:0.72rem;">Universal niyam — Gandhi, MLK er moto</td>
+              <td style="color:#8A6E95;font-size:0.72rem;">Universal niyam — Gandhi, MLK er moto</td>
             </tr>
           </tbody>
         </table>
@@ -1028,7 +1028,7 @@
     </div>
     <div class="theory-card">
       <div class="tc-body">
-        <p style="font-size:0.78rem;color:#aaa;margin-bottom:14px;">WB-TET er jonno mainly Stage 1–4 important (school age poryonto)</p>
+        <p style="font-size:0.78rem;color:#8A6E95;margin-bottom:14px;">WB-TET er jonno mainly Stage 1–4 important (school age poryonto)</p>
         <table class="stage-table">
           <thead><tr><th>Stage</th><th>Age</th><th>Crisis</th><th>Success hoile</th></tr></thead>
           <tbody>
@@ -1238,7 +1238,7 @@
         </ul>
         <div class="hbox" style="background:rgba(34,211,238,0.07);border-color:#22d3ee;margin-top:12px;font-size:0.76rem;">
           <b style="color:#22d3ee;">Evaluation Techniques:</b>
-          <span style="color:#ccc;">Written test · Oral test · Observation · Portfolio · Project · Assignment · Checklist · Rating scale</span>
+          <span style="color:#7A5E85;">Written test · Oral test · Observation · Portfolio · Project · Assignment · Checklist · Rating scale</span>
         </div>
       </div>
       <div class="kbox">
@@ -1271,21 +1271,21 @@
         <div class="grid2">
           <div>
             <p style="color:#ffd200;font-weight:700;font-size:0.85rem;margin-bottom:12px;">NCF 2005 er 5 Major Guidelines</p>
-            <ul style="list-style:none;font-size:0.76rem;color:#ccc;">
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Knowledge ke school er baire connect kora</li>
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Syllabus er burden komaano</li>
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Rote learning er baire jaoa</li>
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Textbook monopoly komanো</li>
+            <ul style="list-style:none;font-size:0.76rem;color:#7A5E85;">
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Knowledge ke school er baire connect kora</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Syllabus er burden komaano</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Rote learning er baire jaoa</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Textbook monopoly komanো</li>
               <li style="padding:7px 0;">▸ National identity + plural society</li>
             </ul>
           </div>
           <div>
             <p style="color:#f7971e;font-weight:700;font-size:0.85rem;margin-bottom:12px;">Important Quick Facts</p>
-            <ul style="list-style:none;font-size:0.76rem;color:#ccc;">
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ NCF 2005 = NCERT, based on Yashpal Committee</li>
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ RTE 2009 = Article 21A te free education</li>
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ CABE = Central Advisory Board of Education</li>
-              <li style="padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);">▸ Mother tongue e shiksha — NCF guideline</li>
+            <ul style="list-style:none;font-size:0.76rem;color:#7A5E85;">
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ NCF 2005 = NCERT, based on Yashpal Committee</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ RTE 2009 = Article 21A te free education</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ CABE = Central Advisory Board of Education</li>
+              <li style="padding:7px 0;border-bottom:1px solid rgba(150,110,160,0.10);">▸ Mother tongue e shiksha — NCF guideline</li>
               <li style="padding:7px 0;">▸ Activity-based learning important</li>
             </ul>
           </div>

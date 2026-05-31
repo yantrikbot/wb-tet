@@ -7,46 +7,46 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Poppins', sans-serif; background: #07071a; background-image: radial-gradient(ellipse at 15% 15%, rgba(244,114,182,0.15) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(236,72,153,0.1) 0%, transparent 55%); min-height: 100vh; color: #e2e8f0; padding: 40px 20px 60px; }
-    .breadcrumb { max-width: 1100px; margin: 0 auto 28px; font-size: 0.72rem; color: #666; }
+    body { font-family: 'Poppins', sans-serif; background: #FFF0F5; background-image: radial-gradient(ellipse at 15% 15%, rgba(244,114,182,0.15) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(236,72,153,0.1) 0%, transparent 55%); min-height: 100vh; color: #6B4E71; padding: 40px 20px 60px; }
+    .breadcrumb { max-width: 1100px; margin: 0 auto 28px; font-size: 0.72rem; color: #A88BB5; }
     .breadcrumb a { color: #f472b6; text-decoration: none; }
     .breadcrumb span { margin: 0 8px; }
     .hero { max-width: 1100px; margin: 0 auto 46px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
     .hero-icon { width: 76px; height: 76px; background: linear-gradient(135deg,#f472b6,#ec4899); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 35px rgba(244,114,182,0.3); flex-shrink: 0; }
     .hero-text .tag { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: #f472b6; font-weight: 600; margin-bottom: 5px; }
     .hero-text h1 { font-size: clamp(1.6rem,4vw,2.6rem); font-weight: 800; background: linear-gradient(90deg,#f472b6,#fbcfe8,#fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-text p { font-size: 0.78rem; color: #888; margin-top: 6px; }
+    .hero-text p { font-size: 0.78rem; color: #9B7FA6; margin-top: 6px; }
 
     .section { max-width: 1100px; margin: 0 auto 52px; }
     .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .sec-num { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg,#f472b6,#ec4899); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .sec-num { width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(135deg,#f472b6,#ec4899); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: #6B4E71; flex-shrink: 0; }
     .sec-head h2 { font-size: 1.2rem; font-weight: 700; }
-    .sec-head .sub { font-size: 0.7rem; color: #888; margin-top: 2px; }
+    .sec-head .sub { font-size: 0.7rem; color: #9B7FA6; margin-top: 2px; }
     .imp { display: inline-block; font-size: 0.58rem; font-weight: 700; padding: 2px 7px; border-radius: 50px; margin-left: 6px; background: rgba(239,68,68,0.18); border: 1px solid rgba(239,68,68,0.35); color: #f87171; vertical-align: middle; letter-spacing: 1px; text-transform: uppercase; }
 
-    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; margin-bottom: 14px; }
+    .card { background: rgba(150,110,160,0.10); border: 1px solid rgba(150,110,160,0.10); border-radius: 18px; padding: 22px; margin-bottom: 14px; }
     .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
     .grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 
     h3 { font-size: 0.92rem; font-weight: 700; margin-bottom: 10px; }
     ul { list-style: none; }
-    ul li { font-size: 0.75rem; color: #ccc; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    ul li { font-size: 0.75rem; color: #7A5E85; padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(150,110,160,0.10); }
     ul li:last-child { border-bottom: none; }
     ul li::before { content: '▸'; color: #f472b6; flex-shrink: 0; margin-top: 1px; }
-    p { font-size: 0.78rem; color: #ccc; line-height: 1.75; }
+    p { font-size: 0.78rem; color: #7A5E85; line-height: 1.75; }
 
     table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
-    th { background: rgba(255,255,255,0.06); padding: 9px 13px; text-align: left; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: #aaa; }
-    td { padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+    th { background: rgba(150,110,160,0.10); padding: 9px 13px; text-align: left; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: #8A6E95; }
+    td { padding: 9px 13px; border-bottom: 1px solid rgba(150,110,160,0.10); vertical-align: top; }
     tr:last-child td { border-bottom: none; }
 
     .tip { background: rgba(244,114,182,0.07); border: 1px solid rgba(244,114,182,0.2); border-radius: 10px; padding: 12px 14px; font-size: 0.73rem; color: #fbcfe8; display: flex; gap: 8px; margin-top: 12px; }
     .tip span:first-child { flex-shrink: 0; }
-    .example-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 12px 14px; margin-top: 10px; font-size: 0.74rem; }
+    .example-box { background: rgba(150,110,160,0.10); border: 1px solid rgba(150,110,160,0.10); border-radius: 10px; padding: 12px 14px; margin-top: 10px; font-size: 0.74rem; }
     .example-box .label { font-size: 0.62rem; color: #f472b6; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
 
-    .div { max-width: 1100px; margin: 0 auto 46px; height: 1px; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.07),transparent); }
-    footer { text-align: center; font-size: 0.65rem; color: #444; letter-spacing: 1px; margin-top: 10px; }
+    .div { max-width: 1100px; margin: 0 auto 46px; height: 1px; background: linear-gradient(90deg,transparent,rgba(150,110,160,0.10),transparent); }
+    footer { text-align: center; font-size: 0.65rem; color: #B59CC0; letter-spacing: 1px; margin-top: 10px; }
   
     /* ── MOBILE RESPONSIVE ── */
     @media (max-width: 640px) {
@@ -194,11 +194,11 @@
         <p style="color:#fbcfe8;font-weight:600;font-size:0.78rem;margin-bottom:10px;">Common Synonyms (Protiśabda)</p>
         <table>
           <tbody>
-            <tr><td style="color:#aaa;">আকাশ</td><td>নভঃ, গগন, অম্বর, ব্যোম</td></tr>
-            <tr><td style="color:#aaa;">পানি/জল</td><td>বারি, সলিল, নীর, তোয়</td></tr>
-            <tr><td style="color:#aaa;">আলো</td><td>দীপ্তি, কিরণ, আভা, জ্যোতি</td></tr>
-            <tr><td style="color:#aaa;">সূর্য</td><td>ভানু, রবি, দিনকর, দিবাকর</td></tr>
-            <tr><td style="color:#aaa;">মাটি</td><td>ক্ষিতি, ধরা, ভূমি, পৃথিবী</td></tr>
+            <tr><td style="color:#8A6E95;">আকাশ</td><td>নভঃ, গগন, অম্বর, ব্যোম</td></tr>
+            <tr><td style="color:#8A6E95;">পানি/জল</td><td>বারি, সলিল, নীর, তোয়</td></tr>
+            <tr><td style="color:#8A6E95;">আলো</td><td>দীপ্তি, কিরণ, আভা, জ্যোতি</td></tr>
+            <tr><td style="color:#8A6E95;">সূর্য</td><td>ভানু, রবি, দিনকর, দিবাকর</td></tr>
+            <tr><td style="color:#8A6E95;">মাটি</td><td>ক্ষিতি, ধরা, ভূমি, পৃথিবী</td></tr>
           </tbody>
         </table>
       </div>
@@ -206,11 +206,11 @@
         <p style="color:#fbcfe8;font-weight:600;font-size:0.78rem;margin-bottom:10px;">Common Antonyms (Biporitarth)</p>
         <table>
           <tbody>
-            <tr><td style="color:#aaa;">আলো</td><td>অন্ধকার</td></tr>
-            <tr><td style="color:#aaa;">সুখ</td><td>দুঃখ</td></tr>
-            <tr><td style="color:#aaa;">জ্ঞান</td><td>অজ্ঞান / মূর্খতা</td></tr>
-            <tr><td style="color:#aaa;">উন্নতি</td><td>অবনতি</td></tr>
-            <tr><td style="color:#aaa;">সৎ</td><td>অসৎ</td></tr>
+            <tr><td style="color:#8A6E95;">আলো</td><td>অন্ধকার</td></tr>
+            <tr><td style="color:#8A6E95;">সুখ</td><td>দুঃখ</td></tr>
+            <tr><td style="color:#8A6E95;">জ্ঞান</td><td>অজ্ঞান / মূর্খতা</td></tr>
+            <tr><td style="color:#8A6E95;">উন্নতি</td><td>অবনতি</td></tr>
+            <tr><td style="color:#8A6E95;">সৎ</td><td>অসৎ</td></tr>
           </tbody>
         </table>
       </div>
